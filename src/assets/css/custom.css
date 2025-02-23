@@ -1,0 +1,69 @@
+.mega-menu-link2::after{
+    content: ""!important;
+}
+.accordion-button{
+    font-weight: bold !important;
+    font-size: 20px !important;
+    padding: 16px 15px;
+    border-bottom: 3px solid;
+    border-bottom-color: #EDBA75;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+/* .accordion-button::after{
+    content: "";
+} */
+.accordion-item{
+    margin-bottom: 20px;
+}
+.accordion-body{
+    text-align: justify;
+    padding-left: 15px;
+}
+
+.content-staff-service-btn{
+    background: #EDBA75;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.content-staff-service-btn a{
+    color: white;
+    font-family: ui-monospace;
+}
+.section-sub-title{
+    margin-top: 50px;
+}
+.section-sub-title span{
+    color: #EDBA75;
+}
+.section-head h2{
+    font-family: 'themify';
+}
+.content-staff-service{
+    margin-top: 30px;
+}
+.content-staff-service .header h2{
+    font-size: 18px;
+    margin-top: 30px;
+}
+.content-staff-service .header span{
+    border-radius: 50%;
+    padding: 30px 30px;
+    /* background: #EDBA75; */
+    
+}
+.content-staff-service .header span i{
+    color: #EDBA75;
+    font-size: 50px;
+    vertical-align: middle;
+
+}
+.custom-footer-link li{
+    padding: 0!important;
+    margin: 10px!important;
+}
+.dropify-message p{
+    font-size: 16px;
+   
+}

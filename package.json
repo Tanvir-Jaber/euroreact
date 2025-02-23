@@ -1,0 +1,65 @@
+{
+  "name": "hireco",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://dev.eurotalenthub.binary-group.com",
+  "proxy": "http://job-port.test:81",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "animate.css": "^4.1.1",
+    "axios": "^1.7.7",
+    "bootstrap": "^5.0.2",
+    "cors": "^2.8.5",
+    "dropify": "^0.2.2",
+    "express": "^4.21.1",
+    "jquery": "^3.7.1",
+    "mdbreact": "^5.2.0",
+    "react": "^17.0.2",
+    "react-animated-progress-bar": "^1.0.4",
+    "react-bootstrap-accordion": "^1.0.0",
+    "react-countup": "^4.3.3",
+    "react-dom": "^17.0.2",
+    "react-dropzone": "^14.3.5",
+    "react-images-uploading": "^3.1.7",
+    "react-router-dom": "^5.3.4",
+    "react-scripts": "^5.0.1",
+    "react-slick": "^0.28.1",
+    "react-tabs": "^3.2.2",
+    "react-use": "^17.2.4",
+    "rfs": "^9.0.4",
+    "sass": "^1.80.4",
+    "sass-loader": "^16.0.2",
+    "slick-carousel": "^1.8.1",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.32",
+    "fslightbox-react": "^1.6.2"
+  }
+}
