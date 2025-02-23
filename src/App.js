@@ -65,7 +65,7 @@ function App() {
         <Route exact path={`${process.env.PUBLIC_URL + '/Home2'}`} component={ Home2 } /> 
         <Route exact path={`${process.env.PUBLIC_URL + '/Home3'}`} component={ Home3 } /> 
         <Route exact path={`${process.env.PUBLIC_URL + '/StaffRequisition'}`} component={ Staff_Requisition } /> 
-        <Route exact path={`${process.env.PUBLIC_URL + '/Career'}`} component={ CompanyCareer } /> 
+        <Route exact path={`${process.env.PUBLIC_URL + '/career'}`} component={ CompanyCareer } /> 
         <Route exact path={`${process.env.PUBLIC_URL + '/About_us'}`} component={ About_us } /> 
         <Route exact path={`${process.env.PUBLIC_URL + '/Gallery'}`} component={ Gallery } /> 
         <Route exact path={`${process.env.PUBLIC_URL + '/Services'}`} component={ Services } />
