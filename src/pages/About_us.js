@@ -1,177 +1,125 @@
 import React, { Component } from 'react';
-import Slider from 'react-slick';
-import ProgressBar from 'react-animated-progress-bar';
 import Header from '../components/layout/Header';
 import PageHeader from "../components/layout/PageHeader";
 import { Footer } from '../components/layout/Footer';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import CountUp from 'react-countup';
-import Video from '../components/layout/Video';
-import AboutTeam from './AboutTeam';
-
-
+import axios from 'axios';
+import ServiceNewStaff from "./ServiceNewStaff";
+import CompanyJobSeeker from '../components/layout/CompanyJobSeeker';
+import CompanyCareerConsultation from '../components/layout/CompanyCareerConsultation';
 export class About_us extends Component {
-  constructor(props) {
-    super(props);
- 
-    this.state = {
-      photoIndex: 0,
-      isOpen: false,
-    };
-  }
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            photoIndex: 0,
+            isOpen: false,
+            data: [],
+            service: []
+        };
+    }
+    async serviceLoad() {
+        let url = `${process.env.REACT_APP_API_URI}/serviceSection`;
+        const response = await axios.get(url);
+        this.setState({ service: response?.data ?? [] });
+    }
+    async aboutUsLoad() {
+        let url = `${process.env.REACT_APP_API_URI}/about_us/1`;
+        const response = await axios.get(url);
+        this.setState({ data: response?.data?.data ?? [] });
+    }
+
+    componentDidMount() {
+        this.aboutUsLoad();
+        this.serviceLoad();
+    }
     render() {
-    
-        
-        return (       
-          <div className="site-main">
+        const { data, service } = this.state
+        return (
+            <div className="site-main">
 
-            <Header/>
-            
-            {/* PageHeader */} 
-            <PageHeader
-                title="about us"
-                breadcrumb="about"
-            />
-            {/* PageHeader end */} 
+                <Header />
 
-            
-            {/* about-section */}
-            <section className="ttm-row about-section clearfix">
-                <div className="container">
-                    {/* row */}
-                    <div className="row">
-                        <div className="col-lg-6">
-                            {/* section title */}
-                            <div className="section-title">
-                                <div className="title-header">
-                                    <h3>Great <span className="text-theme-SkinColor">Search! </span></h3>
-                                    <h2 className="title">Help Organizations To Match Talent to Opportunity</h2>
-                                </div>
-                                <div className="title-desc">
-                                    <p>We give job searchers and IT experts the chance to track down ideal a profession that guarantees long term development and learning.</p>
-                                </div>
-                            </div>{/* section title end */}
-                            <div className="ttm-tabs ttm-tab-style-01">
-                                <Tabs>
-                                    <TabList className="tabs">
-                                        <Tab className="tab"><a className="tab-1" tabIndex="0">Our Mision</a></Tab>
-                                        <Tab className="tab"><a className="tab-2" tabIndex="0">Our Vision</a></Tab>
-                                        <Tab className="tab"><a className="tab-3" tabIndex="0">Core Values</a></Tab>
-                                    </TabList> 
-                                    <div className="content-tab">                                
-                                        <TabPanel>
+                {/* PageHeader */}
+                <PageHeader
+                    title="about us"
+                    breadcrumb="about"
+                />
+                {/* PageHeader end */}
+
+
+                {/* about-section */}
+                {
+                    data.map((item) => {
+                        return (
+                            <div className="site-main">
+                                {/* about-section */}
+                                <section className="ttm-row about-section clearfix">
+                                    <div className="container">
+                                        {/* row */}
                                         <div className="row">
-                                            <div className="col-lg-4 col-md-3 col-sm-4">
-                                                <img className="img-fluid alignleft" height="200" width="200" src="assets/images/blog/blog-6.png" alt="image" />
-                                            </div>
-                                            <div className="col-lg-8 col-md-9 col-sm-8">
-                                                <div className="pt-15">
-                                                    <p>We adapt to the our clients changing needs as well changes into the market to make sure growth of
-                                                     the business, success and happiness</p>
-                                                    <ul className="ttm-list ttm-list-style-icon ttm-list-icon-color-skincolor">
-                                                        <li><i className="far fa-check-circle"></i><div className="ttm-list-li-content">An ability to attract and retain great talent</div></li>
-                                                    </ul>
+
+                                            <div className="col-lg-3">
+                                                <div className="mr-30 mt-30 mt-lg-60 mb-lg-30">
+                                                    <div className="section-title">
+                                                        <div className="title-header">
+                                                            <h2><span className="text-theme-SkinColor title">Let's Grow
+                                                                With Us</span></h2>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        </TabPanel>
-                                        <TabPanel>
-                                        <div className="row">
-                                            <div className="col-lg-4 col-md-3 col-sm-4">
-                                                <img className="img-fluid alignleft" height="200" width="200" src="assets/images/blog/blog-5.png" alt="image" />
+                                            <div className="col-lg-9 m-auto">
+                                                {/* section title */}
+                                                <div className="section-title">
+
+                                                    <div className="title-desc">
+                                                        <p style={{ textAlign: "justify" }}>{item.description}</p>
+                                                    </div>
+
+                                                </div>{/* section title end */}
+
                                             </div>
-                                            <div className="col-lg-8 col-md-9 col-sm-8">
-                                                <div className="pt-15">
-                                                    <p>We adapt to the our clients changing needs as well changes into the market to make sure growth of
-                                                     the business, success and happiness</p>
-                                                    <ul className="ttm-list ttm-list-style-icon ttm-list-icon-color-skincolor">
-                                                        <li><i className="far fa-check-circle"></i><div className="ttm-list-li-content">An ability to attract and retain great talent</div></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        </TabPanel>
-                                        <TabPanel>
-                                        <div className="row">
-                                            <div className="col-lg-4 col-md-3 col-sm-4">
-                                                <img className="img-fluid alignleft" height="200" width="200" src="assets/images/blog/blog-4.png" alt="image" />
-                                            </div>
-                                            <div className="col-lg-8 col-md-9 col-sm-8">
-                                                <div className="pt-15">
-                                                    <p>We adapt to the our clients changing needs as well changes into the market to make sure growth of
-                                                     the business, success and happiness</p>
-                                                    <ul className="ttm-list ttm-list-style-icon ttm-list-icon-color-skincolor">
-                                                        <li><i className="far fa-check-circle"></i><div className="ttm-list-li-content">An ability to attract and retain great talent</div></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        </TabPanel>
-                                    </div>       
-                                </Tabs>
+                                        </div>{/* row end */}
+                                    </div>
+                                </section>
+                                {/* about-section end */}
+
                             </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="mr-30 mt-30 mt-lg-60 mb-lg-30">
-                                <div className="d-flex">
-                                    <img src="assets/images/blog/blog-2.png" className="img-fluid" alt="single_05" />
-                                    <div className="flex-basis-auto ml_180 mr_30 mt_30 z-index_1">
-                                        <img src="images/dot-pattern.png" className="img-fluid" alt="dot-pattern" />
-                                    </div>
-                                    <div className="d-flex justify-content-end flex-column ml_180 mr_30 mb_35 z-index_1">
-                                        <img src="images/dot-pattern.png" className="img-fluid" alt="dot-pattern" />
-                                    </div>
-                                </div>
-                            </div>  
-                        </div>
-                    </div>{/* row end */}
-                </div>
-            </section>
-            {/* about-section end */}
+                        )
+                    })
+                }
 
+                {/* about-section end */}
 
-            {/* team-section */}
-            <AboutTeam/>
-            {/* team-section end */}
+                <section className='container'>
+                    <div className='row'>
+                        {
+                            service.map((item) => {
+                                return (
 
-
-            {/* action-section */}
-            <section className="ttm-row action-section bg-theme-DarkColor text-theme-WhiteColor clearfix">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="d-md-flex align-items-center justify-content-between">
-                                {/* featured-icon-box */}
-                                <div className="featured-icon-box icon-align-before-content style2">
-                                    <div className="featured-icon">
-                                        <div className="ttm-icon ttm-icon_element-onlytxt ttm-icon_element-color-white ttm-icon_element-size-xl">
-                                            <i className="flaticon flaticon-recruitment-5"></i>
+                                    <div className='col-md-2 text-center'>
+                                        <div style={{ border: "1px solid", padding: "25px", borderRadius: "5px", height: "20vh" }} >
+                                            <span><i className={`${item.icon}`} aria-hidden="true"></i></span>
+                                            <h6 className='text-center'>{item.title}</h6>
+                                            <a className='text-theme-SkinColor' href={"services/" + item.id}>Read more</a>
                                         </div>
                                     </div>
-                                    <div className="featured-content">
-                                        <div className="featured-title">
-                                            <h3>Incredible Recruitment & Staffing Agency</h3>
-                                        </div>
-                                        <div className="featured-desc">
-                                            <p>We have over 30 years experience oft Business porro qusquam dol ipsum quia dolor sit amet.</p>
-                                        </div>
-                                    </div>
-                                </div>{/* featured-icon-box end */}
-                                <a className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-border ttm-btn-color-white" 
-                                href={process.env.PUBLIC_URL + '/'}>Hiring Now!</a>
-                            </div>
-                        </div>
+                                )
+                            })
+                        }
                     </div>
-                </div>
-            </section>
-            {/* action-section end */}
+                </section>
+
+                <ServiceNewStaff />
+                <CompanyCareerConsultation />
+                <CompanyJobSeeker />
 
 
-            <Footer/>
-                        
-         </div>
-       )
-   }
+                <Footer />
+
+            </div>
+        )
+    }
 }
 
 
