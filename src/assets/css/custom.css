@@ -1,3 +1,9 @@
+body{
+font-family: 'Poltawski Nowy';
+font-style: normal;
+font-weight: 400;
+}
+
 .mega-menu-link2::after{
     content: ""!important;
 }
@@ -152,7 +158,12 @@ margin: 10px 0 0 0;
   .slick-dots li.slick-active button:before {
     color: #2980b9;
   }
-
+  .slick-slider.slick_slider.banner_slider.banner_slider_3.slick-initialized {
+    height: 100vh;
+}
+.banner_slider_3 .slick-slide >div{
+    height: 100%;
+}
 
 .slick-slider .slick-prev:hover {
     background: #000;
@@ -209,4 +220,90 @@ margin: 10px 0 0 0;
 
 .bottomSlider {
     margin-top: -110px;
+}
+.aboutImageText p{
+
+font-family: 'Poltawski Nowy';
+font-style: normal;
+font-weight: 700;
+font-size: 22.9529px;
+line-height: 36px;
+
+color: #FFFFFF;
+
+
+}
+.aboutImageText {
+    bottom: 56px;
+    left: 74px;
+    background-color: #52bbbf;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+.aboutImageText h1 {
+    font-family: 'Poltawski Nowy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 67.605px;
+    /* line-height: 133px; */
+    color: #fff;
+    margin: 0;
+}
+
+.section-title .title-header h1 {
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    font-size: 27.3882px;
+    line-height: 43px;
+    color: #0084C2;
+}
+.underline{
+    position: relative;
+}
+.underline::after {
+    position: absolute;
+    content: "";
+    bottom: -16px;
+    left: 3px;
+    height: 2px;
+    width: 100px;
+    background: #0084C2;
+}
+.section-title .title-header h2.title {
+    font-family: 'Poltawski Nowy';
+    /* font-family: "Playfair Display", Sans-serif; */
+    font-size: 42px;
+    font-weight: 600;
+    text-transform: capitalize;
+    line-height: 45px;
+    color: #000000;
+    margin-bottom: 18px;
+
+}
+.section-title .title-desc p {
+    font-size: 20px;
+    line-height: 25px;
+    padding-bottom: 8px;
+    margin: 0;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16.4px;
+    line-height: 24px;
+    color: #000000;
+}
+.subtitle {
+    margin: 23px 0;
+    padding: 0px 0px 0px 20px;
+    border-style: solid;
+    border-width: 0px 0px 0px 4px;
+    border-color: #0084C2;
+}
+a.btn.btn-primary {
+    background: linear-gradient(98.49deg, #0084C2 -21.06%, #003F5C 132.94%);
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 15px 25px 15px 25px;
 }

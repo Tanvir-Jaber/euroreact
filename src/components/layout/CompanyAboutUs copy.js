@@ -27,14 +27,13 @@ const CompanyAboutUs = () => {
                                         
                                         <div className="col-lg-6">
                                             <div className="mr-30 mt-30 mt-lg-60 mb-lg-30">
-                                                <div className="d-flex position-relative">
+                                                <div className="d-flex">
                                                     <img src={process.env.REACT_APP_ASSET_URL+"/"+item.image} className="img-fluid" alt="single_05" />
-                                                    {/* <div className="flex-basis-auto ml_180 mr_30 mt_30 z-index_1">
+                                                    <div className="flex-basis-auto ml_180 mr_30 mt_30 z-index_1">
                                                         <img src="images/dot-pattern.png" className="img-fluid" alt="dot-pattern" />
-                                                    </div> */}
-                                                    <div className="aboutImageText position-absolute">
-                                                        <h1 className="number">8 +</h1>
-                                                        <p>YEARS EXPERIENCE</p>
+                                                    </div>
+                                                    <div className="d-flex justify-content-end flex-column ml_180 mr_30 mb_35 z-index_1">
+                                                        <img src="images/dot-pattern.png" className="img-fluid" alt="dot-pattern" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -43,13 +42,13 @@ const CompanyAboutUs = () => {
                                             {/* section title */}
                                             <div className="section-title">
                                                 <div className="title-header">
-                                                    <h1>About Us</h1>
-                                                    <h2 className="title underline">{item.title}</h2>
+                                                    <h3>About Us</h3>
+                                                    <h2 className="title">{item.title}</h2>
                                                 </div>
                                                 <div className="title-desc">
                                                     <p style={{ textAlign: "justify"}}>{item.description}</p>
 
-                                                    <h5 className='subtitle' style={{ textAlign: "justify"}}>{item.sub_content}</h5>
+                                                    <h5 style={{ textAlign: "justify"}}>{item.sub_content}</h5>
                                                 </div>
                                                 <a href='/about_us' className='btn btn-primary'>More About Us</a>
                                             </div>{/* section title end */}

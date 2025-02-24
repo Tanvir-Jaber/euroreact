@@ -85,6 +85,7 @@ export class Home3 extends Component {
                 <Banner />
                 <BannerBottomSlider/>
                 <CompanyAboutUs />
+                {/* <CompanyAboutUs /> */}
                 <ServiceSection />
                 <CompanyWhatWeDo />
                 <ServiceNewStaff />

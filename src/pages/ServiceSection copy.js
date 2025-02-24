@@ -63,7 +63,8 @@ const ServiceSection = () => {
   return (
     <>
       <section
-        
+        className="ttm-row services-section bg-img1 bg-theme-GreyColor ttm-bg ttm-bgimage-yes clearfix"
+        style={{ backgroundImage: "url(images/bg-image/row-bgimage-1.png)" }}
       >
         <div className="container">
           {/* row */}
