@@ -21,39 +21,41 @@ const CompanyCareerConsultation = () => {
                         <div className="site-main">
                             {/* about-section */}
                             <section className="ttm-row about-section clearfix">
-                                <div className="container">
+                                <div className="container ">
                                     {/* row */}
                                     <div className="row">
 
 
-                                        <div className="col-lg-6">
+                                        <div className="col-lg-6 backgroundColor  ">
                                             {/* section title */}
-                                            <div className="section-title">
-                                                <div className="title-header">
-                                                    <h3>{item.title}</h3>
-                                                    <h2 className="title">Career Consultation</h2>
-                                                </div>
-                                                <div className="title-desc">
-                                                    <p style={{ textAlign: "justify" }}>{item.description}</p>
-                                                </div>
-                                                <h6 className="py-2">
-                                                    Click <span className="text-theme-SkinColor">apply</span>{" "}
-                                                    and <span className="text-theme-SkinColor">upload</span> the
-                                                    important information.{" "}
-                                                </h6>
+                                            <div className="px-5 py-5">
+                                                <div className="section-title my-4">
+                                                    <div className="title-header">
+                                                        <h3 className='themeColor mb-30'>{item.title}</h3>
+                                                        <h2 className="title text-white">Career Consultation</h2>
+                                                    </div>
+                                                    <div className="title-desc text-white">
+                                                        <p className='text-white' style={{ textAlign: "justify" }}>{item.description}</p>
+                                                    </div>
+                                                    <h6 className="py-2 text-white">
+                                                        Click <span className="text-theme-SkinColor">apply</span>{" "}
+                                                        and <span className="text-theme-SkinColor">upload</span> the
+                                                        important information.{" "}
+                                                    </h6>
 
-                                                <a className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-border ttm-btn-color-dark"
-                                                    href={process.env.PUBLIC_URL + "/career"} >
-                                                    Apply To Get Here
-                                                </a>
-                                            </div>{/* section title end */}
+                                                    <a className="btn btn-primary"
+                                                        href={process.env.PUBLIC_URL + "/career"} >
+                                                        Apply To Get Here
+                                                    </a>
+                                                </div>
+                                            </div>
 
                                         </div>
 
-                                        <div className="col-lg-6">
-                                            <div className="mr-30 mt-30 mt-lg-60 mb-lg-30">
+                                        <div className="col-lg-6 p-0">
+                                                    <img src={process.env.REACT_APP_ASSET_URL + "/" + item.image} className="img-fluid h-100" alt="single_05" />
+                                            {/* <div className="mr-30 mt-30 mt-lg-60 mb-lg-30">
                                                 <div className="d-flex">
-                                                    <img src={process.env.REACT_APP_ASSET_URL + "/" + item.image} className="img-fluid" alt="single_05" />
                                                     <div className="flex-basis-auto ml_180 mr_30 mt_30 z-index_1">
                                                         <img src="images/dot-pattern.png" className="img-fluid" alt="dot-pattern" />
                                                     </div>
@@ -61,7 +63,7 @@ const CompanyCareerConsultation = () => {
                                                         <img src="images/dot-pattern.png" className="img-fluid" alt="dot-pattern" />
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>{/* row end */}
                                 </div>

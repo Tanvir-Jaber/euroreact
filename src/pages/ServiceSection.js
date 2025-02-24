@@ -18,7 +18,7 @@ const ServiceSection = () => {
         setData(response.data); // Set data from API response
       })
       .catch(err => {
-     
+
       });
 
 
@@ -63,41 +63,29 @@ const ServiceSection = () => {
   return (
     <>
       <section
-        
+
       >
         <div className="container">
           {/* row */}
           <div className="row">
-            <div className="col-lg-11">
-              {/* section title */}
-              <div className="section-title style2 mb-0">
-                <div className="title-header">
-                  <h3>
-                    Classic{" "}
-                    <span className="text-theme-SkinColor">Service</span>
-                  </h3>
-                  <h2 className="title">We Understand Needs</h2>
+            <div className="col-12">
+              <div className="section-title">
+                <div className="title-header text-center">
+                  <h1>What We do?</h1>
+                  <h2 className="title ">Our Services</h2>
                 </div>
-                <div className="title-desc">
-                  <p>
-                    A process that involves everything from{" "}
-                    <span className="text-theme-SkinColor">identifying,</span>{" "}
-                    attracting, shortlisting, interviewing, selecting, hiring,
-                    screening & onboarding employees.
-                  </p>
-                </div>
-              </div>
-              {/* section title end */}
+                
+              </div>{/* section title end */}
             </div>
             {
               data.map(item => (
 
                 <div className="col-md-4">
                   {/* featured-imagebox */}
-                  <div className="featured-imagebox featured-imagebox-services style1 row">
+                  <div className="featured-imagebox featured-imagebox-services style1 row content-wrapper1">
                     {/* featured-thumbnail */}
-                    <div className="featured-thumbnail col-12">
-                    <span><i className={`${item.icon}`} aria-hidden="true"></i></span>
+                    <div className="icon">
+                      <span><i className={`${item.icon}`} aria-hidden="true"></i></span>
                     </div>
                     {/* featured-thumbnail end */}
                     <div className="featured-content col-12">
@@ -108,10 +96,13 @@ const ServiceSection = () => {
                           </a>
                         </h3>
                       </div>
-                      <div className="featured-desc col-12">
+                      <div className="featured-desc ">
                         <p style={{ textAlign: "justify" }}>
                           {item.description}
                         </p>
+                      </div>
+                      <div className="bottomtext">
+                        <a className='learnMore'>LEARN MORE <i className="fa fa-arrow-right"></i> </a>
                       </div>
                       {/* <a
                       className="ttm-btn btn-inline ttm-btn-size-md ttm-btn-color-darkgrey"

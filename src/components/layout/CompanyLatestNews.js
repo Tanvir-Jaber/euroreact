@@ -71,13 +71,13 @@ const CompanyLatestNews = () => {
                         {
                             data.map((item) => {
                                 return (
-                                    <div className="col-lg-12">
+                                    <div className="col-lg-12 d-flex">
                                         {/* testimonials */}
                                         <div className="testimonials ttm-testimonial-box-view-style1">
+                                            <div className="testimonial-content">
                                             <div className="testimonial-caption">
                                                 <h3>{item.title}</h3>
                                             </div>
-                                            <div className="testimonial-content">
                                                 <p className="testimonial-text">
                                                     {item.description_one}
                                                 </p>
@@ -92,7 +92,7 @@ const CompanyLatestNews = () => {
 
                     </Slider>
                     <div className='text-center'>
-                        <button className='text-uppercase btn btn-primary'>All Latest Updates</button>
+                        <button className='btn btn-primary'>All Latest Updates</button>
                     </div>
                 </div>
             </section>

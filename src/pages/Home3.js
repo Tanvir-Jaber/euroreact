@@ -19,6 +19,7 @@ import CompanyUserFeedback from '../components/layout/CompanyUserFeedback';
 import CompanyLatestNews from '../components/layout/CompanyLatestNews';
 import CompanyJobSeeker from '../components/layout/CompanyJobSeeker';
 import BannerBottomSlider from '../components/BannerBottomSlider';
+import FAQ from '../components/layout/FAQ';
 
 export class Home3 extends Component {
     state = {
@@ -83,7 +84,7 @@ export class Home3 extends Component {
             <div className="site-main">
                 <Header />
                 <Banner />
-                <BannerBottomSlider/>
+                <BannerBottomSlider />
                 <CompanyAboutUs />
                 {/* <CompanyAboutUs /> */}
                 <ServiceSection />
@@ -91,28 +92,25 @@ export class Home3 extends Component {
                 <ServiceNewStaff />
                 <CompanyCareerConsultation />
 
-               
+
 
                 {/* FAQ */}
-                <section className="ttm-row about-section bg-layer-equal-height clearfix">
+                {/* <section className="ttm-row about-section bg-layer-equal-height clearfix pt-0">
                     <div className="container">
-                        {/* row */}
                         <div className="row g-0">
                             <div className="col-md-6">
-                                {/* col-img-img-two */}
-                                <div>All your questions answered!</div>
-                                <h3>Having Queries, Please Ask Us</h3>
+                                <div className='themeColor'>All your questions answered!</div>
+                                <h3 className='fw-bolder'>Having Queries, Please Ask Us</h3>
                                 <div className="col-bg-img-two ttm-col-bgimage-yes ttm-bg mt-md-50">
                                     <div
                                         className="ttm-col-wrapper-bg-layer ttm-bg-layer"
                                         style={{
-                                            backgroundImage: `url(${process.env.PUBLIC_URL}/images/Group-11.jpg)`,backgroundSize:"contain"
+                                            backgroundImage: `url(${process.env.PUBLIC_URL}/images/Group-11.jpg)`, backgroundSize: "contain"
                                         }}
                                     ></div>
                                     <div className="layer-content"></div>
 
                                 </div>
-                                {/* col-img-bg-img-two end */}
                             </div>
                             <div className="col-md-6">
                                 <div className="pt-70 pt-md-50 pl-70 pl-md-0">
@@ -127,6 +125,22 @@ export class Home3 extends Component {
                                                         <Accordion title={v.question}>
                                                             {result}
                                                         </Accordion>
+
+                                                        <div className="accordion-item" key={i}>
+                                                            <div
+                                                                className="accordion-header"
+                                                                onClick={() => setActiveIndex(activeIndex === i ? null : i)}
+                                                            >
+                                                                <div className="accordion-title">{v.question}</div>
+                                                                <div className="accordion-icon">
+                                                                    {activeIndex === i ? <FaMinus /> : <FaPlus />}
+                                                                </div>
+                                                            </div>
+
+                                                            <div className={`accordion-content ${activeIndex === i ? 'show' : ''}`}>
+                                                                {result}
+                                                            </div>
+                                                        </div>
                                                     </>
 
                                                 )
@@ -136,10 +150,11 @@ export class Home3 extends Component {
                             </div>
                         </div>
 
-                        {/* row end */}
+                       
                     </div>
-                </section>
+                </section> */}
                 {/* FAQ */}
+                <FAQ faq={faq} />
 
                 <CompanyUserFeedback />
                 <CompanyLatestNews />

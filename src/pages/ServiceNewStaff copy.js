@@ -24,11 +24,6 @@ function ServiceNewStaff() {
       .catch(err => {
       });
   }, []);
-  const chunkSize = 3;
-  const chunks = Array(Math.ceil(data.length / chunkSize))
-    .fill()
-    .map((_, index) => index * chunkSize)
-    .map(begin => data.slice(begin, begin + chunkSize));
   return (
     <div>
       {/* service area start */}
@@ -43,7 +38,7 @@ function ServiceNewStaff() {
                 <h2 className="title split-collab">
                   Staff Requisition Services
                 </h2>
-                <p className="sectiontext" style={{ padding: '5px 20px' }}>
+                <p style={{ padding: '5px 20px' }}>
                   At {process.env.REACT_APP_NAME}, we simplify talent acquisition with tailored
                   staffing solutions, from role definition to precise candidate
                   selection. Leveraging industry expertise, we ensure the
@@ -53,33 +48,26 @@ function ServiceNewStaff() {
             </div>
           </div>
 
-          <div className="container  d-flex justify-content-center my-5">
-            <div className="content-section card">
-              <div className=" gap-0  justify-content-center card-body">
+          <div className="container  d-flex justify-content-center">
+            <div className="content-section ">
+              <div className="row gap-0  justify-content-center">
 
                 {
-                  // Split data into chunks of 3
+                  data.map(item => (
 
 
-                  chunks.map((chunk, rowIndex) => (
-                    <div className={rowIndex == 0 ? 'border-bottom row' : 'row'} key={rowIndex}>
-                      {chunk.map((item, index) => (
-                        <div className={(index == 0 || index == 1) ? 'col-md-4 border-right  p-3 ' : 'col-md-4 p-3 '} key={index}>
-                          <div className="flip-box">
-                            <div className="content-staff-service flip-box-inner ">
-                              <div className="header flip-box-front">
-                                <span><i className={`${item.icon}`} aria-hidden="true"></i></span>
-                                <h2>{item.title} </h2>
-                              </div>
-                              <div className="body flip-box-back">
-                                {item.description}
-                              </div>
-                            </div>
-
-                          </div>
+                    <div className="col-md-4 ">
+                      <div className="content-staff-service">
+                        <div className="header">
+                          <span><i className={`${item.icon}`} aria-hidden="true"></i></span>
+                          <h2>{item.name}</h2>
                         </div>
-                      ))}
+                        <div className="body">
+                          {item.description}
+                        </div>
+                      </div>
                     </div>
+
                   ))
                 }
 
@@ -89,7 +77,7 @@ function ServiceNewStaff() {
             </div>
           </div>
 
-          <button className=" "><Link className="btn btn-primary" to="/StaffRequisition">Apply To Hire Manpower</Link> </button>
+          <button className="content-staff-service-btn"><Link to="/StaffRequisition">Apply To Hire Manpower</Link> </button>
 
 
         </div>

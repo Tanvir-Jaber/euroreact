@@ -9,8 +9,9 @@ const CompanyJobSeeker = () => {
                     <div className="row">
                         <div className="col-lg-12">
                             <div >
-                                <div style={{padding: "18px 63px", background: "url(/images/group.jpg)" , backgroundRepeat:'no-repeat',backgroundSize:'cover',borderRadius:'6px'}}>
-                                    <h5 className='text-white'>
+                                {/* <div style={{padding: "18px 63px", background: "url(/images/group.jpg)" , backgroundRepeat:'no-repeat',backgroundSize:'cover',borderRadius:'6px'}}> */}
+                                <div className='backgroundColor text-center p-40' >
+                                    <h5 className='text-white areyouajob'>
                                         Are you a job seeker? <br/>
                                         As us how we can help you to find your dream job..
                                     </h5>
