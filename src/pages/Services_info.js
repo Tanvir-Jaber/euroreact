@@ -6,11 +6,13 @@ import axios from "axios";
 import CompanyJobSeeker from '../components/layout/CompanyJobSeeker';
 import CompanyWhatWeOffer from '../components/layout/CompanyWhatWeOffer';
 import CompanyUserFeedback from '../components/layout/CompanyUserFeedback';
+import CompanyHavingDoubt from '../components/layout/CompanyHavingDoubt';
+import CompanyQueryOrIssue from '../components/layout/CompanyQueryOrIssue';
 export class Services_details extends Component {
     state = {
         data: '',
         sub: [],
-        service_id:0
+        service_id: 0
     }
 
     async serviceLoadByID(id) {
@@ -27,10 +29,10 @@ export class Services_details extends Component {
         const id = this.props.match.params.id ?? 0;
         this.serviceLoadByID(id)
         this.subServiceLoadByID(id)
-        this.setState({service_id:id})
+        this.setState({ service_id: id })
     }
     render() {
-        const { data, sub,service_id } = this.state;
+        const { data, sub, service_id } = this.state;
         return (
 
             <div className="site-main">
@@ -48,7 +50,7 @@ export class Services_details extends Component {
                     <div className="container">
                         {/* row */}
                         <div className="row">
-                            
+
                             <div className="col-lg-6">
                                 <img className="img-fluid" src={process.env.REACT_APP_ASSET_URL + "/" + data.image} alt="services-img" />
                             </div>
@@ -119,8 +121,30 @@ export class Services_details extends Component {
                         }
                     })
                 }
-                <CompanyWhatWeOffer/>
-                <CompanyUserFeedback/>
+                {
+                    service_id == 6 ? <CompanyWhatWeOffer /> : ""
+                }
+                {
+                    service_id == 6 ? <CompanyUserFeedback /> : ""
+                }
+
+                <br/>
+                <section className='container'>
+                    <div className='row'>
+                        <div className='col-md-6'>
+                            {service_id == 6 ? <CompanyHavingDoubt status="2" />: (service_id == 1 ? <CompanyHavingDoubt status="1" /> : "")}
+                        </div>
+                        <div className='col-md-6'>
+                            {service_id == 6 ? <CompanyQueryOrIssue id="0" />: (service_id == 1 ? <CompanyQueryOrIssue id="6" /> : "")}
+                        </div>
+                    </div>
+
+                </section>
+
+                
+                
+
+                
                 <CompanyJobSeeker />
                 <Footer />
 
