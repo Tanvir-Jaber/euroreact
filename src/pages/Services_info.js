@@ -7,7 +7,7 @@ import axios from "axios";
 export class Services_details extends Component {
     state = {
         data: '',
-        contact_info:"",
+        contact_info: "",
         service_menu: []
     }
     async serviceLoadByID(id) {
@@ -27,7 +27,7 @@ export class Services_details extends Component {
     async contactLoad() {
         let url = `${process.env.REACT_APP_API_URI}/contactInfo`;
         const response = await axios.get(url);
-        if((response.data).length > 0)
+        if ((response.data).length > 0)
             this.setState({ contact_info: response?.data[0] ?? '' });
     }
     componentDidMount() {
@@ -37,7 +37,7 @@ export class Services_details extends Component {
         this.contactLoad();
     }
     render() {
-        const { data,service_menu,contact_info } = this.state;
+        const { data, service_menu, contact_info } = this.state;
         return (
 
             <div className="site-main">
@@ -58,11 +58,9 @@ export class Services_details extends Component {
                             <div className="col-lg-8 content-area order-lg-2">
                                 {/* ttm-service-single-content-area */}
                                 <div className="ttm-service-single-content-area">
-                                    <div className="ttm_single_image-wrapper">
-                                        <img className="img-fluid" src={process.env.REACT_APP_ASSET_URL + "/" + data.image} alt="services-img" />
-                                    </div>
+                                    
                                     <div className="ttm-service-description mt-40">
-                                    <div className="row">
+                                        <div className="row">
                                             <div className="col-lg-6 col-md-6 col-sm-6">
                                                 {/* featured-icon-box */}
                                                 <div className="featured-icon-box icon-align-before-content icon-ver_align-top mr-50 mr-md-0 mt-20">
@@ -78,7 +76,7 @@ export class Services_details extends Component {
                                         </div>
                                         <h3 className="mb-20">{data.title}</h3>
                                         <p>{data.description}</p>
-                                        
+
 
                                     </div>
                                 </div>
@@ -86,35 +84,9 @@ export class Services_details extends Component {
                             </div>
                             <div className="col-lg-4 widget-area">
                                 <div className="sidebar-right">
-                                    {/* <aside className="widget widget-nav-menu">
-                                        <ul>
-                                            {service_menu.map((v) => {
-                                                return (<li>{v.title}</li>)
-                                            })
-                                            }
-                                            
-                                        </ul>
-                                    </aside> */}
-
-                                    <aside className="widget widget-banner">
-                                        <div className="ttm-col-bgcolor-yes bg-theme-DarkColor ttm-bg p-30 pb-50 pt-45">
-                                            <div className="ttm-col-wrapper-bg-layer ttm-bg-layer bg-theme-DarkColor">
-                                                <div className="ttm-col-wrapper-bg-layer-inner"></div>
-                                            </div>
-                                            <div className="layer-content text-center text-theme-WhiteColor">
-                                                <div className="ttm-icon ttm-icon_element-onlytxt ttm-icon_element-style-round ttm-icon_element-color-skincolor ttm-icon_element-size-xl">
-                                                    <i className="far fa-comments"></i></div>
-                                                <h3>Do You Need Any Help?</h3>
-                                                <div className="ttm-horizontal_sep width-100 mt-25 mb-25"></div>
-                                                <ul>
-                                                    <li>{contact_info.phone}</li>
-                                                    <li>{contact_info.email}</li>
-                                                </ul>
-                                                <a className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill 
-                                                ttm-btn-color-skincolor" href={process.env.PUBLIC_URL + '/contact_01'}>appoinments!</a>
-                                            </div>
-                                        </div>
-                                    </aside>
+                                <div className="ttm_single_image-wrapper">
+                                        <img className="img-fluid" src={process.env.REACT_APP_ASSET_URL + "/" + data.image} alt="services-img" />
+                                    </div>
                                 </div>
                             </div>
                         </div>{/* row end */}

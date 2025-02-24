@@ -98,7 +98,7 @@ const ServiceSection = () => {
                   <div className="featured-imagebox featured-imagebox-services style1 row">
                     {/* featured-thumbnail */}
                     <div className="featured-thumbnail col-12">
-                      <img src={process.env.REACT_APP_ASSET_URL + "/" + item.image} />
+                    <span><i className={`${item.icon}`} aria-hidden="true"></i></span>
                     </div>
                     {/* featured-thumbnail end */}
                     <div className="featured-content col-12">
