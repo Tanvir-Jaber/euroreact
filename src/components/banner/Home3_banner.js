@@ -118,7 +118,7 @@ export class Banner extends Component {
                             <div className="slide_img" style={{ backgroundImage: `url(${process.env.REACT_APP_ASSET_URL+"/"+(v.image).replace("\\", "/")})` }}></div>
                             <div className="slide__content pb-50 pb-xl-0 pt-130 pt-xl-0">
                                 <div className="container">
-                                    <div className="row">
+                                    <div className="row align-items-center">
                                         <div className="col-lg-6 col-md-8">
                                             <div className="slide__content--headings ttm-textcolor-white">
                                                 <h2 className="animated animate__fadeInDown">{v.title}</h2>

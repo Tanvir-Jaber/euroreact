@@ -18,6 +18,7 @@ import CompanyCareerConsultation from '../components/layout/CompanyCareerConsult
 import CompanyUserFeedback from '../components/layout/CompanyUserFeedback';
 import CompanyLatestNews from '../components/layout/CompanyLatestNews';
 import CompanyJobSeeker from '../components/layout/CompanyJobSeeker';
+import BannerBottomSlider from '../components/BannerBottomSlider';
 
 export class Home3 extends Component {
     state = {
@@ -82,6 +83,7 @@ export class Home3 extends Component {
             <div className="site-main">
                 <Header />
                 <Banner />
+                <BannerBottomSlider/>
                 <CompanyAboutUs />
                 <ServiceSection />
                 <CompanyWhatWeDo />
