@@ -12,7 +12,7 @@ const Staff_Requisition = () => {
 
         <PageHeader title="Staff Requisition" breadcrumb="Staff Requisition" />
 
-        <div className="col-lg-12 m-3">
+        <div className="container mt-4">
           {/* section title */}
           <div className="section-title title-style-left_text" >
             <div className="title-header pt-5">

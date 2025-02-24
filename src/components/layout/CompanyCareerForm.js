@@ -8,32 +8,22 @@ import "dropify/dist/js/dropify.min.js";
 const CompanyCareerForm = () => {
     const [data, setData] = useState([]);
     const [files, setFiles] = useState([])
-    const [rejected, setRejected] = useState([])
+    const [fileSize, setFileSize] = useState([])
+    const file_arrary = [];
+    const file_size_arrary = [];
+    function handleChange(e) {
+        for (let index = 0; index < e.target.files.length; index++) {
 
-    // const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
-    //     if (acceptedFiles?.length) {
-    //         setFiles(previousFiles => [
-    //             ...previousFiles,
-    //             ...acceptedFiles.map(file =>
-    //                 Object.assign(file, { preview: URL.createObjectURL(file) })
-    //             )
-    //         ])
-    //     }
-
-    //     if (rejectedFiles?.length) {
-    //         setRejected(previousFiles => [...previousFiles, ...rejectedFiles])
-    //     }
-    // }, [])
-
-    // const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    //     accept: {
-    //         '*': []
-    //     },
-    //     maxSize: 1024 * 1000,
-    //     onDrop
-    // })
-
-
+            file_arrary.push(e.target.files[index])
+            var _size = e.target.files[index].size;
+            var fSExt = new Array('Bytes', 'KB', 'MB', 'GB'),
+                i = 0; while (_size > 900) { _size /= 1024; i++; }
+            var exactSize = (Math.round(_size * 100) / 100) + ' ' + fSExt[i];
+            file_size_arrary.push(exactSize)
+        }
+        setFiles(file_arrary);
+        setFileSize(file_size_arrary)
+    }
     useEffect(() => {
         $(".dropify").dropify();
         let url = `${process.env.REACT_APP_API_URI}/job-categories`;
@@ -44,30 +34,8 @@ const CompanyCareerForm = () => {
             .catch(err => {
             });
 
-
-
-
-        //////
-
-        const files = () => files.forEach(file => URL.revokeObjectURL(file.preview))
-
         ////
-    }, [files]);
-
-
-    const removeFile = name => {
-        setFiles(files => files.filter(file => file.name !== name))
-    }
-
-    const removeAll = () => {
-        setFiles([])
-        setRejected([])
-    }
-
-    const removeRejected = name => {
-        setRejected(files => files.filter(({ file }) => file.name !== name))
-    }
-
+    }, []);
     const [formData, setFormData] = useState({
         name: '', dob: '', nationality: '', city: '', zip: '', employer_country: '',
         phone_no_two: '', phone_no: '', german: '', spanish: "", french: "", english: "", other_language: "", other_experience: "",
@@ -76,54 +44,62 @@ const CompanyCareerForm = () => {
         experience3: "",
         experience4: "",
         experience5: "",
-
-        // language: '', duties: '', requirements: '', workplace_location: '', occupation: '',
-        // position: '', work_experience: '',
-        // duration: '', expected_cost: '', tolerance_days: '', initiation_date: '', shift: '',
-        // transportation_option: '', overtime_option: '', accommodation_provided: '', flexible_date_option: ''
     });
 
     const [message, setMessage] = useState('');
-
-
-
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        console.log(name, value);
         setFormData({
             ...formData,
             [name]: value, // Use name as the key to update the corresponding field
         });
     };
 
+    const removeFiles = (e) => {
+        let id = e.target.getAttribute('data-id');
+        const result = files.filter((file, key) => key != id);
+        setFiles(result)
+    }
+
 
     const handleSubmit = async (e) => {
 
         e.preventDefault();
+        e.target.setAttribute('disabled',true);
         setMessage('');
 
-        // let url = `${process.env.REACT_APP_API_URI}/staffInfo/store`;
-        // try {
-        //     const response = await axios.post(url, formData, {
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //         },
-        //     });
-        //     setMessage(response.data.message);
-        //     alert(response.data.message);
+        setTimeout(async () => {
+            setFormData({
+                ...formData,
+                ['image']: files, // Use name as the key to update the corresponding field
+            });
+
+          
+            let url = `${process.env.REACT_APP_API_URI}/career`;
+            try {
+                const response = await axios.post(url, formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                });
+                setMessage(response.data.message);
+                window.location.reload()
 
 
-        // } catch (error) {
-        //     if (error.response && error.response.data) {
-        //         setMessage(error.response.data.message || 'An error occurred');
-        //         alert(error.response.data.message);
-        //     } else {
-        //         setMessage('An error occurred');
-        //         alert('An error occurred');
-        //     }
-        // }
+            } catch (error) {
+                if (error.response && error.response.data) {
+                    setMessage(error.response.data.message || 'An error occurred');
+                    // alert(error.response.data.message);
+                } else {
+                    setMessage('An error occurred');
+                    // alert('An error occurred');
+                }
+                e.target.removeAttribute('disabled');
+            }
 
-        console.log(formData);
+        }, 1000);
+
+
 
     };
 
@@ -139,7 +115,7 @@ const CompanyCareerForm = () => {
                     {/* first stap start  */}
                     <h3>Personal Data</h3>
                     <hr /><br />
-                    {message && <h5 style={{ color: 'green', fontSize: '25px', padding: "5px 0" }} >{message}</h5>}
+                    {message && <h5 style={{ color: 'red', fontSize: '18px', padding: "5px 0" }} >{message}</h5>}
                     <div className="row">
 
                         <div className="col-md-4">
@@ -230,8 +206,6 @@ const CompanyCareerForm = () => {
                     <br />
                     <h3>Languages (Conversational Level)</h3>
                     <hr /><br />
-
-                    {message && <h5 style={{ color: 'green', fontSize: '25px', padding: "5px 0" }} >{message}</h5>}
                     <div className="row">
                         <p>Tell us what's your skills about foreign languages</p>
                         <div className="col-md-6">
@@ -329,7 +303,6 @@ const CompanyCareerForm = () => {
                     <br />
                     <h3>Professional Experience</h3>
                     <hr /><br />
-                    {message && <h5 style={{ color: 'green', fontSize: '25px', padding: "5px 0" }} >{message}</h5>}
                     <div className="row">
                         <p>You may indicate up to 5 (five) professionals or professional activities in which you have professional experience - regardless of whether or not they have been paid and/or declare.
                             <br />
@@ -470,16 +443,28 @@ const CompanyCareerForm = () => {
                     <br />
                     <h3>Upload CV and/or Other Documents </h3>
                     <hr /><br />
-                    {message && <h5 style={{ color: 'green', fontSize: '25px', padding: "5px 0" }} >{message}</h5>}
                     <p>Upload Your CV</p>
                     <div className="row mx-1">
-                        <input type="file" class="dropify" multiple data-max-file-size="1M" data-height="100" />
-                        <div className='preview-image'>
-                            <ul>
-                                <li>01. test.jpg </li>
-                            </ul>
+                        <input type="file" class="dropify" onChange={handleChange} multiple data-max-file-size="1M" data-height="100" />
+                        {
 
-                        </div>
+                            files.map((item, i) => {
+                                return (
+                                    <div className='preview-image mt-4'>
+                                        <div className="dnd-upload-details d-flex justify-content-between">
+                                            <span>
+                                                <i className='fa fa-file'></i>
+                                                <span className="name ml-2"><span>{item.name}</span><em>({fileSize[i]})</em></span>
+                                            </span>
+
+                                            <span className="remove" onClick={removeFiles} data-id={i}> <i onClick={removeFiles} data-id={i} className='fa fa-times'></i> </span>
+                                        </div>
+
+                                    </div>
+                                )
+                            })
+                        }
+
                     </div>
 
                     {/* three step end  */}

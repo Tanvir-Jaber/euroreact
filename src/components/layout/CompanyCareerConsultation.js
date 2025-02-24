@@ -43,7 +43,7 @@ const CompanyCareerConsultation = () => {
                                                 </h6>
 
                                                 <a className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-border ttm-btn-color-dark"
-                                                    href={process.env.PUBLIC_URL + "/staffRequisition"} >
+                                                    href={process.env.PUBLIC_URL + "/career"} >
                                                     Apply To Get Here
                                                 </a>
                                             </div>{/* section title end */}

@@ -16,25 +16,25 @@ const Staff_Requisition_Form = () => {
     
     const [message, setMessage] = useState(''); 
 
-    function performSignIn() {
-        let headers = new Headers();
-        let url = `${process.env.REACT_APP_API_URI}/staffInfo/store`;
-        headers.append('Content-Type', 'application/json');
-        headers.append('Accept', 'application/json');
-        // headers.append('Origin', 'http://localhost:3000');
+    // function performSignIn() {
+    //     let headers = new Headers();
+    //     let url = `${process.env.REACT_APP_API_URI}/staffInfo/store`;
+    //     headers.append('Content-Type', 'application/json');
+    //     headers.append('Accept', 'application/json');
+    //     // headers.append('Origin', 'http://localhost:3000');
     
-        fetch(url, {
-          mode: 'no-cors',
-          credentials: 'include',
-          method: 'POST',
-          cache: 'no-cache',
-          headers: headers
-        })
-          .then(response => response.json())
-          .then(json => console.log(json))
-          .catch(error => console.log('Authorization failed: ' + error.message));
-      }
-    performSignIn()
+    //     fetch(url, {
+    //       mode: 'no-cors',
+    //       credentials: 'include',
+    //       method: 'POST',
+    //       cache: 'no-cache',
+    //       headers: headers
+    //     })
+    //       .then(response => response.json())
+    //       .then(json => console.log(json))
+    //       .catch(error => console.log('Authorization failed: ' + error.message));
+    //   }
+    // performSignIn()
 
     const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -82,7 +82,7 @@ const Staff_Requisition_Form = () => {
     return (
         <>
 
-        <div className="col-lg-10">
+        <div className="">
             <div className="container">
 
                     <form id="contact-form" onSubmit={handleSubmit} >

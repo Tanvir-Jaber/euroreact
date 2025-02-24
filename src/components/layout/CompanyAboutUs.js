@@ -47,6 +47,8 @@ const CompanyAboutUs = () => {
                                                 </div>
                                                 <div className="title-desc">
                                                     <p style={{ textAlign: "justify"}}>{item.description}</p>
+
+                                                    <h5 style={{ textAlign: "justify"}}>{item.sub_content}</h5>
                                                 </div>
                                                 <a href='/about_us' className='btn btn-primary'>More About Us</a>
                                             </div>{/* section title end */}

@@ -14,7 +14,7 @@ const CompanyJobSeeker = () => {
                                         Are you a job seeker? <br/>
                                         As us how we can help you to find your dream job..
                                     </h5>
-                                    <button className='text-uppercase btn btn-primary'>Enquiry</button>
+                                    <a href={process.env.PUBLIC_URL + "/career"} className='text-uppercase btn btn-primary'>Enquiry</a>
                                 </div>
                             </div>
                         </div>

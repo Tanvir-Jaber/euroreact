@@ -86,15 +86,15 @@ export class Services_details extends Component {
                             </div>
                             <div className="col-lg-4 widget-area">
                                 <div className="sidebar-right">
-                                    <aside className="widget widget-nav-menu">
+                                    {/* <aside className="widget widget-nav-menu">
                                         <ul>
                                             {service_menu.map((v) => {
-                                                return (<li><a href={process.env.PUBLIC_URL + '/services/' + v.id}>{v.title}</a></li>)
+                                                return (<li>{v.title}</li>)
                                             })
                                             }
                                             
                                         </ul>
-                                    </aside>
+                                    </aside> */}
 
                                     <aside className="widget widget-banner">
                                         <div className="ttm-col-bgcolor-yes bg-theme-DarkColor ttm-bg p-30 pb-50 pt-45">
