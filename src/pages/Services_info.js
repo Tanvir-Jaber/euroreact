@@ -135,7 +135,7 @@ export class Services_details extends Component {
                             {service_id == 6 ? <CompanyHavingDoubt status="2" />: (service_id == 1 ? <CompanyHavingDoubt status="1" /> : "")}
                         </div>
                         <div className='col-md-6'>
-                            {service_id == 6 ? <CompanyQueryOrIssue id="0" />: (service_id == 1 ? <CompanyQueryOrIssue id="6" /> : "")}
+                            {service_id == 6 ? <CompanyQueryOrIssue id="0" /> : (service_id == 1 ? <CompanyQueryOrIssue id="6" /> : "")}
                         </div>
                     </div>
 

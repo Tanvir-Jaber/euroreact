@@ -24,18 +24,18 @@ const CompanyQueryOrIssue = (props) => {
         <>
             {
                 tempID == 0 ?
-                    <div className="" style={{  height: "50vh", background: `url(/images/country-04.jpg)` }}>
-                       
+                    <div className="" style={{ height: "50vh", background: `url(/images/country-04.jpg)` }}>
+
                     </div>
                     : <div className="" style={{ padding: "50px", height: "50vh", background: `url(${process.env.REACT_APP_ASSET_URL}/${data.image})` }}>
                         <h4 className="text-theme-SkinColor">{data.title}</h4>
                         <p className="text-white">{data.description}</p>
                     </div>
             }
-            <div className="" style={{ padding: "50px", height: "50vh", background: `url(${process.env.REACT_APP_ASSET_URL}/${data.image})` }}>
+            {/* <div className="" style={{ padding: "50px", height: "50vh", background: `url(${process.env.REACT_APP_ASSET_URL}/${data.image})` }}>
                 <h4 className="text-theme-SkinColor">{data.title}</h4>
                 <p className="text-white">{data.description}</p>
-            </div>
+            </div> */}
 
 
 
