@@ -13,25 +13,7 @@ const ContactForm = () => {
 
     const [message, setMessage] = useState(''); 
 
-    function performSignIn() {
-        let headers = new Headers();
-        let url = `${process.env.REACT_APP_API_URI}/userFeadback/store`;
-        headers.append('Content-Type', 'application/json');
-        headers.append('Accept', 'application/json');
-        // headers.append('Origin', 'http://localhost:3000');
     
-        fetch(url, {
-          mode: 'no-cors',
-          credentials: 'include',
-          method: 'POST',
-          cache: 'no-cache',
-          headers: headers
-        })
-          .then(response => response.json())
-          .then(json => console.log(json))
-          .catch(error => console.log('Authorization failed: ' + error.message));
-      }
-    performSignIn()
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -47,7 +29,7 @@ const ContactForm = () => {
 
         e.preventDefault();
         setMessage(''); // Clear previous message
-        let url = `${process.env.REACT_APP_API_URI}/userFeadback/store`;
+        let url = `${process.env.REACT_APP_API_URI}/user/contact/store`;
         try {
           const response = await axios.post(url, formData, {
             headers: {
@@ -56,15 +38,15 @@ const ContactForm = () => {
           });
   
           setMessage(response.data.message);
-          alert(response.data.message);
+          window.location.reload()
         } catch (error) {
           // Handle error and show error message
           if (error.response && error.response.data) {
             setMessage(error.response.data.message || 'An error occurred');
-            alert(error.response.data.message);
+           
           } else {
             setMessage('An error occurred');
-            alert('An error occurred');
+            
           }
         }
       };

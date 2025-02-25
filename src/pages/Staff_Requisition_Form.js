@@ -59,16 +59,16 @@ const Staff_Requisition_Form = () => {
           },
         });
         setMessage(response.data.message);
-        alert(response.data.message);
+        window.location.reload();
 
 
       } catch (error) {
         if (error.response && error.response.data) {
           setMessage(error.response.data.message || 'An error occurred');
-          alert(error.response.data.message);
+        //   alert(error.response.data.message);
         } else {
           setMessage('An error occurred');
-          alert('An error occurred');
+        //   alert('An error occurred');
         }
       }
 
@@ -104,6 +104,7 @@ const Staff_Requisition_Form = () => {
                                 onChange={handleInputChange}
                                 name="name" 
                                 id="name" 
+                                required
                                 placeholder="Enter Name of Employer"  />
                             </div>
                         </div>
@@ -114,6 +115,7 @@ const Staff_Requisition_Form = () => {
                                 <input type="text" className="form-control" style={{fontSize:"14px", height:"50px"}} 
                                 value={formData.vat}
                                 onChange={handleInputChange}
+                                required
                                 name="vat" id="vat" placeholder="VAT"  />
                             </div>
                         </div>
@@ -125,6 +127,7 @@ const Staff_Requisition_Form = () => {
                                 <input type="text" className="form-control" style={{fontSize:"14px", height:"50px"}} 
                                 value={formData.sector}
                                 onChange={handleInputChange}
+                                required
                                 name="sector" id="sector" placeholder="Sector"  />
                             </div>
                         </div>
@@ -135,6 +138,7 @@ const Staff_Requisition_Form = () => {
                                 <input type="text" className="form-control" style={{fontSize:"14px", height:"50px"}} 
                                 value={formData.address}
                                 onChange={handleInputChange}
+                                required
                                 name="address" id="address" placeholder=" Address"  />
                             </div>
                         </div>
@@ -145,6 +149,7 @@ const Staff_Requisition_Form = () => {
                                 <input type="text" className="form-control" style={{fontSize:"14px", height:"50px"}} 
                                 value={formData.city}
                                 onChange={handleInputChange}
+                                required
                                 name="city" id="city" placeholder="City"  />
                             </div>
                         </div>
@@ -156,6 +161,7 @@ const Staff_Requisition_Form = () => {
                                 <input type="text" className="form-control" style={{fontSize:"14px", height:"50px"}} 
                                 value={formData.zip}
                                 onChange={handleInputChange}
+                                required
                                 name="zip" id="zip" placeholder="ZIP"  />
                             </div>
                         </div>
@@ -166,6 +172,7 @@ const Staff_Requisition_Form = () => {
                                 <label for="employer_country">Country</label>
                                 <input type="text" className="form-control" style={{fontSize:"14px", height:"50px"}} 
                                 value={formData.employer_country}
+                                required
                                 onChange={handleInputChange} name="employer_country" id="employer_country" placeholder="Country name"  />
                             </div>
                         </div>
@@ -190,6 +197,7 @@ const Staff_Requisition_Form = () => {
                                 <input type="text" className="form-control" style={{fontSize:"14px", height:"50px"}}
                                 value={formData.contact_person_name}
                                 onChange={handleInputChange}
+                                required
                                 name="contact_person_name" id="contact_person_name" placeholder="Name"  />
                             </div>
                         </div>
@@ -200,6 +208,7 @@ const Staff_Requisition_Form = () => {
                                 <input type="email" className="form-control" style={{fontSize:"14px", height:"50px"}}
                                 value={formData.email}
                                 onChange={handleInputChange}
+                                required
                                 name="email" id="email" placeholder="Email"  />
                             </div>
                         </div>
@@ -210,6 +219,7 @@ const Staff_Requisition_Form = () => {
                                 <input type="text" className="form-control" style={{fontSize:"14px", height:"50px"}}
                                 value={formData.phone}
                                 onChange={handleInputChange}
+                                required
                                 name="phone" id="phone" placeholder="Phone Number"  />
                             
                             </div>
@@ -234,6 +244,7 @@ const Staff_Requisition_Form = () => {
                                 <input type="text" className="form-control" style={{fontSize:"14px", height:"50px"}}
                                 value={formData.occupation}
                                 onChange={handleInputChange} 
+                                required
                                 name="occupation" id="occupation" placeholder="Occupation"  />    
                             </div>
                         </div>
@@ -244,6 +255,7 @@ const Staff_Requisition_Form = () => {
                                 <input type="number" className="form-control" style={{fontSize:"14px", height:"50px"}}
                                 value={formData.position}
                                 onChange={handleInputChange}  
+                                required
                                 name="position" id="position" placeholder="Position"  />
                             </div>
                         </div>
@@ -289,6 +301,7 @@ const Staff_Requisition_Form = () => {
                                 <textarea type="text" className="form-control" rows="4" style={{fontSize:"14px"}}
                                 value={formData.duties}
                                 onChange={handleInputChange}  
+                                required
                                 name="duties" id="duties" placeholder="Duties"  />
                             </div>
                         </div>
@@ -298,6 +311,7 @@ const Staff_Requisition_Form = () => {
                                 <label for="requirements" style={{fontSize:"16px"}}> Requirements:</label>
                                 <textarea type="text" className="form-control" rows="4" style={{fontSize:"14px"}}
                                 value={formData.requirements}
+                                required
                                 onChange={handleInputChange}  name="requirements" id="requirements" placeholder="language specific skills and characters etc"  />
                             </div>
                         </div>
@@ -308,6 +322,7 @@ const Staff_Requisition_Form = () => {
                                 <input type="text" className="form-control" style={{fontSize:"14px", height:"50px"}}
                                 value={formData.workplace_location}
                                 onChange={handleInputChange}
+                                required
                                 name="workplace_location" id="workplace_location" placeholder="nearest town and city"  />    
                             </div>
                         </div>
@@ -318,6 +333,7 @@ const Staff_Requisition_Form = () => {
                                 <input type="text" className="form-control" style={{fontSize:"14px", height:"50px"}}
                                 value={formData.country}
                                 onChange={handleInputChange}
+                                required
                                 name="country" id="country" placeholder="Country name"  />    
                             </div>
                         </div>
@@ -328,6 +344,7 @@ const Staff_Requisition_Form = () => {
                                 <input type="text" className="form-control" style={{fontSize:"14px", height:"50px"}}
                                 value={formData.nationalities}
                                 onChange={handleInputChange} 
+                                required
                                 name="nationalities" id="nationalities" placeholder="Nationalities:"  />    
                             </div>
                         </div>
@@ -356,6 +373,7 @@ const Staff_Requisition_Form = () => {
                             onChange={handleInputChange}
                             id="duration"
                             name="duration"
+                            required
                             aria-label=".form-select-lg example"
                             >
                             <option value="Less than 3 months">Select your Choose</option>
@@ -374,6 +392,7 @@ const Staff_Requisition_Form = () => {
                                 <input type="date" className="form-control" style={{fontSize:"14px", height:"50px"}}
                                 value={formData.initiation_date}
                                 onChange={handleInputChange} 
+                                required
                                 name="initiation_date" id="initiation_date" placeholder="dd/mm/yyyy"  />
                             </div>
                         </div>
@@ -384,6 +403,7 @@ const Staff_Requisition_Form = () => {
                         <input type="number" className="form-control" style={{fontSize:"14px", height:"50px"}}
                         value={formData.tolerance_days}
                         onChange={handleInputChange} 
+                        required
                         name="tolerance_days" id="tolerance_days" placeholder="Enter number of days" />
                         </div>
                     </div>

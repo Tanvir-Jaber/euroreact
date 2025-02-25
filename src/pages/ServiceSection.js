@@ -102,7 +102,7 @@ const ServiceSection = () => {
                         </p>
                       </div>
                       <div className="bottomtext">
-                        <a className='learnMore'>LEARN MORE <i className="fa fa-arrow-right"></i> </a>
+                        <a className='learnMore' href={process.env.PUBLIC_URL+"/services/"+item.id}>LEARN MORE <i className="fa fa-arrow-right"></i> </a>
                       </div>
                       {/* <a
                       className="ttm-btn btn-inline ttm-btn-size-md ttm-btn-color-darkgrey"

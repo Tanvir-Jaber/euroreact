@@ -67,7 +67,7 @@ export class Header extends Component {
 
                                                 {/* menu end */}
                                                 <div className="header_extra ml-auto d-flex align-items-center">
-                                                    <Header_search/>
+                                                    {/* <Header_search/> */}
                                                     {/* <div className="header_social">
                                                         <ul className="social-icons">
                                                             <li><a href="/" rel="noopener" aria-label="facebook"><i className="ti ti-facebook"></i></a></li>

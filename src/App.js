@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import React, { Component, useEffect } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './css/vendor/flaticon.css';
@@ -40,54 +40,63 @@ import CompanyCareer from "../src/components/layout/CompanyCareer"
 
 function App() {
 
-  // const express = require('express');
-  // const cors = require('cors');
-  // const app = express();
-  
-  // app.use(cors({
-  //   origin: 'http://localhost:3000', // Allow requests from React app
-  //   credentials: true,
-  // }));
-  
 
-  
-  // app.listen(8000, () => {
-  //   console.log('Server running on http://127.0.0.1:8000');
-  // });
-  
 
- 
+
+  const googleTranslateElementInit = () => {
+    new window.google.translate.TranslateElement(
+      {
+        pageLanguage: "en",
+        includedLanguages:"en,nl,pt,fr,de,es,uk",
+        autoDisplay: false
+      },
+      "google_translate_element"
+    );
+  };
+  useEffect(() => {
+    var addScript = document.createElement("script");
+    addScript.setAttribute(
+      "src",
+      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    );
+    document.body.appendChild(addScript);
+    window.googleTranslateElementInit = googleTranslateElementInit;
+    
+  }, []);
+
+
+
   return (
-    <div className="page">
-      <Router> 
-      
-        <Route exact path={`${process.env.PUBLIC_URL + '/'}`} component={ Home3 } />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Home2'}`} component={ Home2 } /> 
-        <Route exact path={`${process.env.PUBLIC_URL + '/Home3'}`} component={ Home3 } /> 
-        <Route exact path={`${process.env.PUBLIC_URL + '/StaffRequisition'}`} component={ Staff_Requisition } /> 
-        <Route exact path={`${process.env.PUBLIC_URL + '/career'}`} component={ CompanyCareer } /> 
-        <Route exact path={`${process.env.PUBLIC_URL + '/About_us'}`} component={ About_us } /> 
-        <Route exact path={`${process.env.PUBLIC_URL + '/Gallery'}`} component={ Gallery } /> 
-        <Route exact path={`${process.env.PUBLIC_URL + '/Services'}`} component={ Services } />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Services/:id'}`} component={ Services_info } />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Services_details'}`} component={ Services_details } />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Blog_classic'}`} component={ Blog_classic } />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Blog_grid'}`} component={ Blog_grid } />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Blog_details'}`} component={ Blog_details } />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Contact_01'}`} component={ Contact_01 } />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Contact_02'}`} component={ Contact_02 } />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Job_list'}`} component={ Job_list } />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Job_details'}`} component={ Job_details } />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Carrer_01'}`} component={ Carrer_01 } />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Error_404'}`} component={ Error_404 } />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Error_405'}`} component={ Error_405 } />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Employers_list'}`} component={ Employers_list } />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Employers_details'}`} component={ Employers_details } />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Candidate_list'}`} component={ Candidate_list } />
-       <Route exact path={`${process.env.PUBLIC_URL + '/Candidate_details'}`} component={ Candidate_details } />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Login'}`} component={ Login } />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Register'}`} component={ Register } />
-       
+    <div className="page" id='google_translate_element'>
+      <Router>
+
+        <Route exact path={`${process.env.PUBLIC_URL + '/'}`} component={Home3} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Home2'}`} component={Home2} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Home3'}`} component={Home3} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/StaffRequisition'}`} component={Staff_Requisition} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/career'}`} component={CompanyCareer} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/About_us'}`} component={About_us} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Gallery'}`} component={Gallery} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Services'}`} component={Services} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Services/:id'}`} component={Services_info} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Services_details'}`} component={Services_details} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Blog_classic'}`} component={Blog_classic} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Blog_grid'}`} component={Blog_grid} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Blog_details'}`} component={Blog_details} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Contact_01'}`} component={Contact_01} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Contact_02'}`} component={Contact_02} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Job_list'}`} component={Job_list} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Job_details'}`} component={Job_details} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Carrer_01'}`} component={Carrer_01} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Error_404'}`} component={Error_404} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Error_405'}`} component={Error_405} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Employers_list'}`} component={Employers_list} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Employers_details'}`} component={Employers_details} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Candidate_list'}`} component={Candidate_list} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Candidate_details'}`} component={Candidate_details} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Login'}`} component={Login} />
+        <Route exact path={`${process.env.PUBLIC_URL + '/Register'}`} component={Register} />
+
 
         <ScrollToTop />
       </Router>
