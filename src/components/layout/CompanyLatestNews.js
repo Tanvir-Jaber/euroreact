@@ -15,26 +15,39 @@ const CompanyLatestNews = () => {
     var slick_slider = {
         dots: false,
         arrow: false,
+        className: "center",
+        centerMode: true,
+        centerPadding: "0",
         autoplay: true,
         infinite: true,
         speed: 1000,
-        slidesToShow: 4,
+        slidesToShow: 3,
         slidesToScroll: 1,
         rows: 1,
+        // margin:'30px',
 
         responsive: [{
 
             breakpoint: 1199,
             settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3
+                slidesToShow: 2,
+                slidesToScroll: 1
             }
-        }, {
+        },
+        {
 
-            breakpoint: 991,
+            breakpoint: 1024,
             settings: {
                 slidesToShow: 2,
-                slidesToScroll: 2
+                slidesToScroll: 1
+            }
+        },
+        {
+
+            breakpoint: 680,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
             }
         },
         {
@@ -48,7 +61,7 @@ const CompanyLatestNews = () => {
 
     return (
         <>
-            <section className="ttm-row testimonial-section clearfix">
+            <section className="ttm-row testimonial-section clearfix pb-0">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
@@ -62,11 +75,11 @@ const CompanyLatestNews = () => {
                             </div>
                         </div>
                     </div>
+                    <div className="slick_slider1">
                     <Slider
-                        className="row slick_slider slick-arrows-style1"
+                        className="row slick_slider  slick-arrows-style1"
                         {...slick_slider}
-                        slidesToShow={3}
-                        arrows={true}
+
                     >
                         {
                             data.map((item) => {
@@ -74,13 +87,17 @@ const CompanyLatestNews = () => {
                                     <div className="col-lg-12 d-flex">
                                         {/* testimonials */}
                                         <div className="testimonials ttm-testimonial-box-view-style1">
-                                            <div className="testimonial-content">
-                                            <div className="testimonial-caption">
-                                                <h3>{item.title}</h3>
-                                            </div>
-                                                <p className="testimonial-text">
+                                            <div className="testimonial-content testimonial-content1">
+                                                <div className="testimonial-caption p-0">
+                                                    <h3 className='newstitle'>{item.title}</h3>
+                                                </div>
+                                                <p className="testimonial-text newsdescription">
                                                     {item.description_one}
                                                 </p>
+                                            <div className="bottomtext">
+                                                <a className='learnMore1'>LEARN MORE <i className="fa fa-arrow-right"></i> </a>
+                                            </div>
+
                                             </div>
                                         </div>{" "}
                                         {/* testimonials end */}
@@ -91,8 +108,10 @@ const CompanyLatestNews = () => {
 
 
                     </Slider>
+
+                    </div>
                     <div className='text-center'>
-                        <button className='btn btn-primary'>All Latest Updates</button>
+                        <a className='btn btn-primary'>All Latest Updates</a>
                     </div>
                 </div>
             </section>

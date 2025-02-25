@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function FAQ({faq}) {
     const [activeIndex, setActiveIndex] = useState(null);
     
-  
+    useEffect(() => {
+        setActiveIndex(0);
+    }, []);
     return (
         <>
             <section className="ttm-row about-section bg-layer-equal-height clearfix pt-0">

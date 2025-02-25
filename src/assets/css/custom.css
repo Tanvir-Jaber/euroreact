@@ -96,9 +96,9 @@ font-weight: 400;
 
 /* Slider container */
 .slider-container {
-    max-width: 1200px;
+    /* max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 40px 20px; */
   }
   
   /* Individual slide styling */
@@ -128,9 +128,11 @@ line-height: 40px;
 color: #000;
 margin: 10px 0 0 0;
   }
+  .slick-center .content-wrapper,
   .content-wrapper:hover {
-    background-color: #192635;
-  }
+      background-color: #192635;
+    }
+    .slick-center .content-wrapper h5,
   .content-wrapper:hover h5 {
     color: #fff;
   }
@@ -543,15 +545,33 @@ a.btn.btn-primary {
     transform: scale(0.9);
 }
 
+.testimonial-content1 {
+    padding: 20px !important;
+    min-height: 200px;
+    margin-bottom: 0 !important;
+}
+.ttm-testimonial-box-view-style1 .testimonial-content1 {
+    margin-bottom: 0 !important;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
+    margin: 0;
+    min-height: 220px;
+}
+.slick_slider1 .slick-list {
+    padding: 50px 0 !important;
+}
 .testimonial-content {
     background: #fff;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
     height: 100%;
     display: flex;
     flex-direction: column;
     /* box-shadow: 0 10px 30px rgba(0,0,0,0.1); */
-    border-bottom: 20px solid #0084c2;
+    border-bottom: 20px solid #52BBBF;
+}
+.star-ratings ul li.active i {
+    color: black;
+    font-size: 16px;
 }
 .areyouajob{
     font-family: 'Poltawski Nowy';
@@ -571,4 +591,93 @@ line-height: 47px;
         transform: none;
         opacity: 1;
     }
+}
+
+.slider-container .slick-slide.slick-active.slick-center.slick-current {
+    scale: 1.13;
+    margin: 0 40px;
+}
+.testimonial-item1 {
+    padding:0 10px ;
+}
+
+
+.learnMore1 {
+    display: block;
+    padding-top: 0;
+    font-size: 15px;
+    color: #0084C2 !important;
+}
+
+
+/* Add to your stylesheet */
+/* */
+  .testimonial-caption p{
+    font-size: 16px;
+  }
+  .testimonial-caption h3{
+    font-size: 18px;
+  }
+  .testimonial-text {
+    font-size: 13px;
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+            line-clamp: 3;
+    -webkit-box-orient: vertical; */
+}
+
+
+.testimonial-item {
+    height: 100%;
+    display: flex !important; 
+  }
+  
+  .testimonial-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 230px; 
+  }
+  
+
+  
+
+  .slick-track {
+    display: flex !important;
+    align-items: stretch; 
+  }
+  .slick-initialized .slick-slide>div{
+    width: 100%;
+  }
+  .slick-slide {
+    height: auto !important; /* Override default height */
+    display: flex !important;
+  }
+  .slider-container .slick-track{
+    padding: 40px 0;
+  }
+  .newstitle{
+    font-size: 18px;
+    padding: 0;
+    font-family: 'Poltawski Nowy';
+    font-style: normal;
+    font-weight: 900;
+    line-height: 30px;
+    color: #000;
+  }
+  .newsdescription{
+    margin-top: 10px;
+    font-size: 13px;
+    font-family: 'Poltawski Nowy';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* color: #000; */
+  }
+  .footerBtn {
+    font-size: 10px !important;
+    margin: 0;
+    padding: 12px 13px !important;
 }

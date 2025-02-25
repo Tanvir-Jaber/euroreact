@@ -20,6 +20,7 @@ import CompanyLatestNews from '../components/layout/CompanyLatestNews';
 import CompanyJobSeeker from '../components/layout/CompanyJobSeeker';
 import BannerBottomSlider from '../components/BannerBottomSlider';
 import FAQ from '../components/layout/FAQ';
+import CenterMode from '../components/layout/CenterMode';
 
 export class Home3 extends Component {
     state = {
@@ -157,6 +158,7 @@ export class Home3 extends Component {
                 <FAQ faq={faq} />
 
                 <CompanyUserFeedback />
+                {/* <CenterMode /> */}
                 <CompanyLatestNews />
                 <CompanyJobSeeker />
                 <Footer />

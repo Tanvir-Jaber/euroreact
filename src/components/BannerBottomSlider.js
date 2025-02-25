@@ -21,6 +21,9 @@ class BannerBottomSlider extends Component {
     var slick_slider = {
       dots: false,
       arrow: false,
+      className: "center",
+      centerMode: true,
+      centerPadding: "0",
       autoplay: true,
       infinite: true,
       speed: 1000,
