@@ -84,6 +84,7 @@ const CompanyHavingDoubt = (props) => {
                                     onChange={handleInputChange}
                                     name="name"
                                     id="name"
+                                    required
                                     placeholder="Your Name" />
                             </div>
                         </div>
@@ -94,6 +95,7 @@ const CompanyHavingDoubt = (props) => {
                                 <input type="text" className="form-control" style={{ fontSize: "14px", height: "50px" }}
                                     value={formData.email}
                                     onChange={handleInputChange}
+                                    required
                                     name="email" id="email" placeholder="Your Email" />
                             </div>
                         </div>
@@ -102,7 +104,7 @@ const CompanyHavingDoubt = (props) => {
                             tempStatus == 1 ? <div className="col-md-6">
                                 <div className="form-group">
                                     <label for="sector">Service</label>
-                                    <select onChange={handleInputChange} name="service_id" className="form-control" style={{ fontSize: "14px", height: "50px" }}>
+                                    <select required onChange={handleInputChange} name="service_id" className="form-control" style={{ fontSize: "14px", height: "50px" }}>
                                         <option value="">Choose an option</option>
                                         {
                                             data.map((itme) => {
@@ -123,6 +125,7 @@ const CompanyHavingDoubt = (props) => {
                                 <input type="text" className="form-control" style={{ fontSize: "14px", height: "50px" }}
                                     value={formData.subject}
                                     onChange={handleInputChange}
+                                    required
                                     name="subject" id="subject" placeholder="Your Subject" />
                             </div>
                         </div>
