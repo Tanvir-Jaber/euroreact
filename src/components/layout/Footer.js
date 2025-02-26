@@ -60,12 +60,12 @@ export class Footer extends Component {
                     <li><a href={process.env.PUBLIC_URL + '/contact_01'}>Contact Us</a></li>
                   </ul>
                   <a href="https://www.livroreclamacoes.pt/Inicio/" className="btn btn-primary footerBtn">Register Complaint</a>
-                  <a
+                  {/* <a
                     className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-border ttm-btn-color-white"
                     href="https://www.livroreclamacoes.pt/Inicio"
                   >
                     Register Complain
-                  </a>
+                  </a> */}
                 </div>
               </div>
               <div className="col-xs-12 col-sm-6 col-md-6 col-lg-3 widget-area">

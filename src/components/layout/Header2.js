@@ -4,6 +4,7 @@ import Mobile_menu from './Mobile_menu';
 import Logo_white from './Logo_white'
 import Header_search from './Header_search'
 import axios from "axios";
+import CountrySelector from './CountrySelector';
 
 export class Header extends Component {
     state = {
@@ -51,14 +52,14 @@ export class Header extends Component {
                             <div className="row">
                                 <div className="col-lg-12">
                                     {/* site-navigation */}
-                                    <div className="site-navigation d-flex align-items-center justify-content-between">
+                                    <div className="py-md-3 my-0  d-flex align-items-center justify-content-between">
                                         {/* site-branding */}
                                         <div className="site-branding">
                                             <Logo_white />
                                         </div>
                                         {/* site-branding end */}
-                                        <div className="border-box-block text-theme-WhiteColor">
-                                            <div className="top_bar d-flex align-items-center justify-content-between">
+                                        <div className="border-box-block text-theme-WhiteColor site-navigation">
+                                            {/* <div className="top_bar d-flex align-items-center justify-content-between">
                                                 <div className="d-flex w-auto">
                                                     <div className="top_bar_contact_item">
                                                         <div className="top_bar_icon">
@@ -99,7 +100,7 @@ export class Header extends Component {
                                                         </li>
                                                     </ul>
                                                 </div>
-                                            </div>
+                                            </div> */}
                                             <div className="d-flex align-items-center justify-content-between">
                                                 {/* menu */}
                                                 <Menu />
@@ -109,12 +110,13 @@ export class Header extends Component {
                                             </div>
                                         </div>
                                         <div className="header_btn">
-                                            <a className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill
+                                            <CountrySelector />
+                                            {/* <a className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill
                                             ttm-icon-btn-left ttm-btn-color-skincolor d-flex align-items-center">
                                                 <i className="far fa-user fa-sm"></i><a className="alert-heading" href={process.env.PUBLIC_URL + '/register'}>sign up </a>
                                                 <span className="ml-10 mr-10">/</span>
                                                 <i className="ti ti-lock fa-sm"></i><a className="alert-heading" href={process.env.PUBLIC_URL + '/login'}>login </a>
-                                            </a>
+                                            </a> */}
                                         </div>
                                     </div>{/* site-navigation end */}
                                 </div>
