@@ -78,7 +78,7 @@ export class Banner extends Component {
                                     </div>
                                 </div>
                                 <div className="col-lg-6">
-                                    <div className="d-none d-xl-block text-center position-relative">
+                                    <div className="d-none  text-center position-relative">
                                         <div className="z-index-1 position-relative">
                                             <img className="rounded-circle box-shadow m-auto img-fuild" src={process.env.PUBLIC_URL + "/images/single-01.jpg"}></img>
                                         </div>
@@ -129,7 +129,7 @@ export class Banner extends Component {
                                             </div>
                                         </div>
                                         <div className="col-lg-6">
-                                            <div className="d-none d-xl-block text-center position-relative">
+                                            <div className="d-none  text-center position-relative">
                                                 <div className="z-index-1 position-relative">
                                                     <img className="rounded-circle box-shadow m-auto img-fuild" src={process.env.PUBLIC_URL + "/images/single-01.jpg"}></img>
                                                 </div>

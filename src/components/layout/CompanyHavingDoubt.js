@@ -78,7 +78,7 @@ const CompanyHavingDoubt = (props) => {
                         {tempStatus == 2 ? <h3>Ask Query</h3> : ""}
                         <div className="col-md-6">
                             <div className="form-group ttm-box-col-wrapper" style={{ fontSize: "16px" }}>
-                                <label for="name">Name</label>
+                                {/* <label for="name">Name</label> */}
                                 <input type="text" style={{ fontSize: "14px", height: "50px" }} className="form-control"
                                     value={formData.name}
                                     onChange={handleInputChange}
@@ -91,7 +91,7 @@ const CompanyHavingDoubt = (props) => {
 
                         <div className="col-md-6">
                             <div className="form-group">
-                                <label for="vat">Email</label>
+                                {/* <label for="vat">Email</label> */}
                                 <input type="text" className="form-control" style={{ fontSize: "14px", height: "50px" }}
                                     value={formData.email}
                                     onChange={handleInputChange}
@@ -103,7 +103,7 @@ const CompanyHavingDoubt = (props) => {
                         {
                             tempStatus == 1 ? <div className="col-md-6">
                                 <div className="form-group">
-                                    <label for="sector">Service</label>
+                                    {/* <label for="sector">Service</label> */}
                                     <select required onChange={handleInputChange} name="service_id" className="form-control" style={{ fontSize: "14px", height: "50px" }}>
                                         <option value="">Choose an option</option>
                                         {
@@ -121,7 +121,7 @@ const CompanyHavingDoubt = (props) => {
 
                         <div className={ tempStatus == 1 ? 'col-md-6' : 'col-md-12'}>
                             <div className="form-group">
-                                <label for="sector">Subject</label>
+                                {/* <label for="sector">Subject</label> */}
                                 <input type="text" className="form-control" style={{ fontSize: "14px", height: "50px" }}
                                     value={formData.subject}
                                     onChange={handleInputChange}
@@ -133,8 +133,8 @@ const CompanyHavingDoubt = (props) => {
 
                         <div className="col-md-12">
                             <div className="form-group">
-                                <label for="employer_country">Message</label>
-                                <textarea onChange={handleInputChange} className="form-control" style={{ fontSize: "14px", height: "50px" }} name="message" placeholder="Your Message"></textarea>
+                                {/* <label for="employer_country">Message</label> */}
+                                <textarea onChange={handleInputChange} className="form-control" style={{ fontSize: "14px", height: "100px" }} name="message" placeholder="Your Message"></textarea>
 
                             </div>
                         </div>
@@ -146,7 +146,7 @@ const CompanyHavingDoubt = (props) => {
 
 
 
-                    <button type="submit" className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill ttm-btn-color-skincolor my-3" >Submit</button>
+                    <button type="submit" className="btn btn-primary float-end" >Submit</button>
                 </form>
 
             </div>

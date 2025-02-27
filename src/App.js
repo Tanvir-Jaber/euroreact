@@ -43,63 +43,98 @@ function App() {
 
 
 
-  const googleTranslateElementInit = () => {
-    new window.google.translate.TranslateElement(
-      {
-        pageLanguage: "en",
-        includedLanguages:"en,nl,pt,fr,de,es,uk",
-        autoDisplay: false
-      },
-      "google_translate_element"
-    );
-  };
-  useEffect(() => {
-    var addScript = document.createElement("script");
-    addScript.setAttribute(
-      "src",
-      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    );
-    document.body.appendChild(addScript);
-    window.googleTranslateElementInit = googleTranslateElementInit;
-    
-  }, []);
+  // const googleTranslateElementInit = () => {
+  //   new window.google.translate.TranslateElement(
+  //     {
+  //       pageLanguage: "en",
+  //       includedLanguages: "en,nl,pt,fr,de,es,uk",
+  //       autoDisplay: false
+  //     },
+  //     "google_translate_element"
+  //   );
+  // };
+  // useEffect(() => {
+  //   var addScript = document.createElement("script");
+  //   addScript.setAttribute(
+  //     "src",
+  //     "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+  //   );
+  //   document.body.appendChild(addScript);
+  //   window.googleTranslateElementInit = googleTranslateElementInit;
+
+  // }, []);
 
 
 
   return (
-    <div className="page" id='google_translate_element'>
-      <Router>
+    <div>
+       <div className="page" id='google_translate_element'>
+        <div className="sideIcon">
+  
+          <div className="sideIconWraper">
+  
+            <div className="sideIconBox">
+              <a href="tel:1234567890" className='tooltip-btn'  >
+                <i className="fa fa-suitcase"></i>
+                <span className="tooltip-text">Job Seeker</span>
+              </a>
+            </div>
+            <div className="sideIconBox">
+              <a href="tel:1234567890" className='tooltip-btn' >
+                <i className="fa fa-users"></i>
+                <span className="tooltip-text">Staff Requisition</span>
+              </a>
+            </div>
+            <div className="sideIconBox">
+              <a href="tel:1234567890" className='tooltip-btn' >
+                <i style={{ 'transform': 'rotate(90deg)' }} className="fa fa-phone" aria-hidden="true"></i>
+  
+                <span className="tooltip-text">Phone</span>
+              </a>
+            </div>
+            <div className="sideIconBox">
+              <a href="tel:1234567890" className='tooltip-btn' >
+                <i className="fa fa-envelope"></i>
+                <span className="tooltip-text">E-mail</span>
+              </a>
+            </div>
+  
+          </div>
+        </div>
+        <Router>
+  
+          <Route exact path={`${process.env.PUBLIC_URL + '/'}`} component={Home3} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Home2'}`} component={Home2} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Home3'}`} component={Home3} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/StaffRequisition'}`} component={Staff_Requisition} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/career'}`} component={CompanyCareer} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/About_us'}`} component={About_us} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Gallery'}`} component={Gallery} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Services'}`} component={Services} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Services/:id'}`} component={Services_info} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Services_details'}`} component={Services_details} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Blog_classic'}`} component={Blog_classic} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Blog_grid'}`} component={Blog_grid} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Blog_details'}`} component={Blog_details} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Contact_01'}`} component={Contact_01} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Contact_02'}`} component={Contact_02} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Job_list'}`} component={Job_list} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Job_details'}`} component={Job_details} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Carrer_01'}`} component={Carrer_01} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Error_404'}`} component={Error_404} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Error_405'}`} component={Error_405} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Employers_list'}`} component={Employers_list} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Employers_details'}`} component={Employers_details} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Candidate_list'}`} component={Candidate_list} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Candidate_details'}`} component={Candidate_details} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Login'}`} component={Login} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/Register'}`} component={Register} />
+  
+  
+          <ScrollToTop />
+        </Router>
+       </div>
 
-        <Route exact path={`${process.env.PUBLIC_URL + '/'}`} component={Home3} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Home2'}`} component={Home2} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Home3'}`} component={Home3} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/StaffRequisition'}`} component={Staff_Requisition} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/career'}`} component={CompanyCareer} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/About_us'}`} component={About_us} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Gallery'}`} component={Gallery} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Services'}`} component={Services} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Services/:id'}`} component={Services_info} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Services_details'}`} component={Services_details} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Blog_classic'}`} component={Blog_classic} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Blog_grid'}`} component={Blog_grid} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Blog_details'}`} component={Blog_details} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Contact_01'}`} component={Contact_01} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Contact_02'}`} component={Contact_02} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Job_list'}`} component={Job_list} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Job_details'}`} component={Job_details} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Carrer_01'}`} component={Carrer_01} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Error_404'}`} component={Error_404} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Error_405'}`} component={Error_405} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Employers_list'}`} component={Employers_list} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Employers_details'}`} component={Employers_details} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Candidate_list'}`} component={Candidate_list} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Candidate_details'}`} component={Candidate_details} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Login'}`} component={Login} />
-        <Route exact path={`${process.env.PUBLIC_URL + '/Register'}`} component={Register} />
-
-
-        <ScrollToTop />
-      </Router>
     </div>
   );
 }

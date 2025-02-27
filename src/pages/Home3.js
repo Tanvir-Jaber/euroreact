@@ -84,38 +84,7 @@ export class Home3 extends Component {
 
         return (
             <div className="site-main">
-                <div className="sideIcon">
-                  
-                    <div className="sideIconWraper">
-
-                        <div className="sideIconBox">
-                            <a href="tel:1234567890" className='tooltip-btn'  >
-                            <i className="fa fa-suitcase"></i>
-                                 <span className="tooltip-text">Job Seeker</span>
-                            </a>
-                        </div>
-                        <div className="sideIconBox">
-                            <a href="tel:1234567890" className='tooltip-btn' >
-                            <i className="fa fa-users"></i>
-                                 <span className="tooltip-text">Staff Requisition</span>
-                            </a>
-                        </div>
-                        <div className="sideIconBox">
-                            <a href="tel:1234567890" className='tooltip-btn' >
-                                <i style={{'transform': 'rotate(90deg)'}} className="fa fa-phone" aria-hidden="true"></i>
-                                
-                                 <span className="tooltip-text">Phone</span>
-                            </a>
-                        </div>
-                        <div className="sideIconBox">
-                            <a href="tel:1234567890" className='tooltip-btn' >
-                            <i className="fa fa-envelope"></i>
-                                 <span className="tooltip-text">E-mail</span>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
+               
                 <Header />
                 <Banner />
                 <BannerBottomSlider />

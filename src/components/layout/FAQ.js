@@ -19,10 +19,12 @@ function FAQ({faq}) {
                             <div className="col-bg-img-two ttm-col-bgimage-yes ttm-bg mt-md-50">
                                 <div
                                     className="ttm-col-wrapper-bg-layer ttm-bg-layer"
-                                    style={{
-                                        backgroundImage: `url(${process.env.PUBLIC_URL}/images/Group-11.jpg)`, backgroundSize: "contain"
-                                    }}
-                                ></div>
+                                    // style={{
+                                    //     backgroundImage: `url(${process.env.PUBLIC_URL}/images/Group-11.jpg)`, backgroundSize: "contain"
+                                    // }}
+                                >
+                                    <img src={`${process.env.PUBLIC_URL}/images/Group-11.jpg`} alt="img" srcset="" className='img-fluit' />
+                                </div>
                                 <div className="layer-content"></div>
 
                             </div>

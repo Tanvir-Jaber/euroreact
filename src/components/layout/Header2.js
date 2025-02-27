@@ -5,6 +5,7 @@ import Logo_white from './Logo_white'
 import Header_search from './Header_search'
 import axios from "axios";
 import CountrySelector from './CountrySelector';
+import GoogleTranslateWidget from './GoogleTranslateWidget';
 
 export class Header extends Component {
     state = {
@@ -48,7 +49,7 @@ export class Header extends Component {
                 {/* site-header-menu */}
                 <div id="site-header-menu" className="site-header-menu">
                     <div className="site-header-menu-inner ttm-stickable-header">
-                        <div className="container-fluid">
+                        <div className="container">
                             <div className="row">
                                 <div className="col-lg-12">
                                     {/* site-navigation */}
@@ -110,7 +111,8 @@ export class Header extends Component {
                                             </div>
                                         </div>
                                         <div className="header_btn">
-                                            <CountrySelector />
+                                            {/* <CountrySelector /> */}
+                                            <GoogleTranslateWidget />
                                             {/* <a className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill
                                             ttm-icon-btn-left ttm-btn-color-skincolor d-flex align-items-center">
                                                 <i className="far fa-user fa-sm"></i><a className="alert-heading" href={process.env.PUBLIC_URL + '/register'}>sign up </a>

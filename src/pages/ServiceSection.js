@@ -80,7 +80,7 @@ const ServiceSection = () => {
             {
               data.map(item => (
 
-                <div className="col-md-4">
+                <div className="col-xl-4 col-sm-6">
                   {/* featured-imagebox */}
                   <div className="featured-imagebox featured-imagebox-services style1 row content-wrapper1">
                     {/* featured-thumbnail */}

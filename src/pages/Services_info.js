@@ -1,5 +1,5 @@
 import React, { Component, dangerouslySetInnerHTML } from 'react';
-import Header from '../components/layout/Header';
+import Header from '../components/layout/Header2';
 import PageHeader from "../components/layout/PageHeader";
 import { Footer } from '../components/layout/Footer';
 import axios from "axios";
@@ -8,6 +8,7 @@ import CompanyWhatWeOffer from '../components/layout/CompanyWhatWeOffer';
 import CompanyUserFeedback from '../components/layout/CompanyUserFeedback';
 import CompanyHavingDoubt from '../components/layout/CompanyHavingDoubt';
 import CompanyQueryOrIssue from '../components/layout/CompanyQueryOrIssue';
+import './../assets/css/service.css';
 export class Services_details extends Component {
     state = {
         data: '',
@@ -49,14 +50,14 @@ export class Services_details extends Component {
                 <div className="ttm-row sidebar ttm-sidebar clearfix">
                     <div className="container">
                         {/* row */}
-                        <div className="row">
+                        <div className="row align-items-center">
 
                             <div className="col-lg-6">
                                 <img className="img-fluid" src={process.env.REACT_APP_ASSET_URL + "/" + data.image} alt="services-img" />
                             </div>
                             <div className="col-lg-6">
                                 {/* ttm-service-single-content-area */}
-                                <h3 className="mb-20">{data.title}</h3>
+                                <h3 className="mb-30 underline">{data.title}</h3>
                                 <p>{data.description}</p>
                                 {/* ttm-service-single-content-are end */}
                             </div>
@@ -68,13 +69,13 @@ export class Services_details extends Component {
                     sub.map((item, i) => {
                         if (i % 2 == 0) {
                             return (
-                                <div className="ttm-row sidebar ttm-sidebar clearfix">
+                                <div className="ttm-row sidebar ttm-sidebar clearfix backgroundColor">
                                     <div className="container">
                                         {/* row */}
-                                        <div className="row">
+                                        <div className="row align-items-center">
                                             <div className="col-lg-6">
                                                 {/* ttm-service-single-content-area */}
-                                                <h3 className="mb-20">{item.title}</h3>
+                                                <h3 className="mb-30 underline text-white">{item.title}</h3>
                                                 {<div dangerouslySetInnerHTML={{ __html: item.description }} />}
                                                 {/* ttm-service-single-content-are end */}
                                             </div>
@@ -97,7 +98,7 @@ export class Services_details extends Component {
                                 <div className="ttm-row sidebar ttm-sidebar clearfix">
                                     <div className="container">
                                         {/* row */}
-                                        <div className="row">
+                                        <div className="row align-items-center ">
 
                                             <div className="col-lg-6">
                                                 <div className="sidebar-right">
@@ -108,7 +109,7 @@ export class Services_details extends Component {
                                             </div>
                                             <div className="col-lg-6">
                                                 {/* ttm-service-single-content-area */}
-                                                <h3 className="mb-20">{item.title}</h3>
+                                                <h3 className="mb-30 underline">{item.title}</h3>
                                                 {<div dangerouslySetInnerHTML={{ __html: item.description }} />}
                                                 {/* ttm-service-single-content-are end */}
                                             </div>
@@ -130,11 +131,11 @@ export class Services_details extends Component {
 
                 <br/>
                 <section className='container'>
-                    <div className='row'>
-                        <div className='col-md-6'>
+                    <div className='row border'>
+                        <div className='col-md-6 py-3 px-2'>
                             {service_id == 6 ? <CompanyHavingDoubt status="2" />: (service_id == 1 ? <CompanyHavingDoubt status="1" /> : "")}
                         </div>
-                        <div className='col-md-6'>
+                        <div className='col-md-6 pr-0 '>
                             {service_id == 6 ? <CompanyQueryOrIssue id="0" /> : (service_id == 1 ? <CompanyQueryOrIssue id="6" /> : "")}
                         </div>
                     </div>
