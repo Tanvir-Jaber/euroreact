@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react'
-
+import axios from 'axios';
 function FAQ({faq}) {
     const [activeIndex, setActiveIndex] = useState(null);
+    const [data, setData] = useState([]);
     
     useEffect(() => {
         setActiveIndex(0);
+        async function faqLoad() {
+            let url = `${process.env.REACT_APP_API_URI}/faq/image`;
+            const response = await axios.get(url);
+            setData(response?.data );
+            console.log(data)
+        }   
+        faqLoad();
     }, []);
     return (
         <>
@@ -23,7 +31,7 @@ function FAQ({faq}) {
                                     //     backgroundImage: `url(${process.env.PUBLIC_URL}/images/Group-11.jpg)`, backgroundSize: "contain"
                                     // }}
                                 >
-                                    <img src={`${process.env.PUBLIC_URL}/images/Group-11.jpg`} alt="img" srcset="" className='img-fluit' />
+                                    <img src={`${process.env.REACT_APP_ASSET_URL}/${data.image_url}`} alt="img" srcset="" className='img-fluit' />
                                 </div>
                                 <div className="layer-content"></div>
 
