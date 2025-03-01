@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 body{
-font-family: 'Poltawski Nowy';
+/* font-family: 'Poltawski Nowy'; */
+font-family: "Montserrat", sans-serif;
 font-style: normal;
 font-weight: 400;
 }
@@ -103,7 +105,7 @@ font-weight: 400;
   
   /* Individual slide styling */
   .slide-item {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
   }
   .content-wrapper1 .icon, 
@@ -128,12 +130,12 @@ line-height: 40px;
 color: #000;
 margin: 10px 0 0 0;
   }
-  .slick-center .content-wrapper,
-  .content-wrapper:hover {
+  .slick-center .content-wrapper{
+  /* .content-wrapper:hover { */
       background-color: #192635;
     }
-    .slick-center .content-wrapper h5,
-  .content-wrapper:hover h5 {
+    .slick-center .content-wrapper h5
+ {
     color: #fff;
   }
   .content-wrapper {
@@ -174,11 +176,11 @@ margin: 10px 0 0 0;
     background: #000;
 }
 .slick-slider .slick-next {
-    right: 29px;
+    right: 0px;
 }
 
 .slick-slider .slick-prev {
-    left: 29px;
+    left: 0px;
 }
 
  .slick-arrow {
@@ -341,6 +343,9 @@ button.btn.btn-primary.float-end {
            line-clamp: 3;
    -webkit-box-orient: vertical;
    font-size: 16px;
+}
+.featured-desc p {
+  text-align: center !important;
 }
 .featured-desc{
     overflow: hidden;
@@ -542,7 +547,22 @@ button.btn.btn-primary.float-end {
     transition: all 0.3s ease;
     height: 100%;
 }
-
+.bottomitem .icons img{
+  width: 35px;
+}
+.bottomitem .icons {
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+}
+.bottomitem .icons span{
+  font-size: 35px;
+  margin-left: 8px;
+}
+.bottomitem {
+  font-size: 20px;
+  text-align: center;
+}
 /* Center slide styling */
 .testimonial-item.center-slide {
     transform: scale(1.1);
@@ -580,7 +600,15 @@ button.btn.btn-primary.float-end {
 }
 .star-ratings ul li.active i {
     color: black;
-    font-size: 16px;
+    font-size: 13px;
+}
+.star-ratings ul {
+  padding: 0;
+  margin: 10px 0;
+}
+.testimonial-text {
+  font-size: 13px;
+  line-height: 21px;
 }
 .areyouajob{
     font-family: 'Poltawski Nowy';
@@ -626,6 +654,7 @@ line-height: 47px;
   }
   .testimonial-caption h3{
     font-size: 18px;
+    margin: 0;
   }
   .testimonial-text {
     font-size: 13px;
@@ -647,7 +676,7 @@ line-height: 47px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    min-height: 230px; 
+    /* min-height: 230px;  */
   }
   
 
@@ -838,9 +867,11 @@ nav.main-menu {
     font-weight: 500;
     cursor: pointer;
     color: #000;
-    width: 150px;
+    width: 60px;
   }
-  
+  .ttm-header-style-02 #site-header-menu .site-navigation ul.menu > li > a {
+    padding: 28px 20px 28px 20px;
+}
   .custom-select option {
     color: black !important;
   }
@@ -928,6 +959,44 @@ nav.main-menu {
     right: 89px; */
 }
 @media (max-width: 575px) {
+  .slider-container .slick-slide.slick-active.slick-center.slick-current {
+    scale: 1;
+    margin: 0 10px;
+}
+.pt-70.pt-md-50.pl-70.pl-md-0 {
+  margin-top: 140px;
+}
+.section-title .title-desc p {
+  font-size: 14.4px;
+  text-align: left !important;
+}
+.accordion-header {
+  font-size: 14px;
+
+}
+.borderLine {
+  width: 45px;
+  margin-right: 14px;
+}
+.section-title .title-header h2.title {
+
+  font-size: 28px;
+
+}
+  .bottomitem .icons img{
+    width: 25px;
+  }
+  .bottomitem {
+    font-size: 13px;
+}
+.bottomitem .icons span {
+  font-size: 22px;
+  margin-left: 5px;
+}
+.section-title .title-desc p {
+  font-size: 14.4px;
+
+}
     ul.navbar-nav.mr-auto {
         position: fixed;
         width: 100%;
@@ -962,12 +1031,47 @@ nav.main-menu {
         font-size: 33px;
     }
     .slick-slider .slick-next {
-        right: -18px;
+        right: 30%;
+        top: 100%;
     }
     .slick-slider .slick-prev {
-        left: -18px;
+        left: 30%;
+        top: 100%;
+    }
+    .bottomSlider .slick-slider .slick-next {
+        right: -5px;
+        top: 50%;
+    }
+    .bottomSlider .slick-slider .slick-prev {
+        left: -5px;
+        top: 50%;
     }
     .sideIcon{
         display: none;
     }
+    section.ttm-row.testimonial-section.clearfix.pb-0 .text-center {
+      margin-top: 40px;
+  }
+  .areyouajob {
+    font-size: 23px;
+    line-height: 32px;
+}
+.featured-imagebox-services.style1 {
+  padding: 30px 10px 20px 10px;
+}
+.content-wrapper1 .icon, .content-wrapper .icon {
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+}
+.featured-imagebox-services.style1 .featured-content {
+  padding: 15px 10px 15px 10px;
+ 
+}
+.learnMore {
+  display: block;
+  padding-top: 15px;
+  font-size: 14px;
+  color: #0084C2 !important;
+}
 }

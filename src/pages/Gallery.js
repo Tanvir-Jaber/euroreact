@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 import ProgressBar from 'react-animated-progress-bar';
-import Header from '../components/layout/Header';
+import Header from '../components/layout/Header2';
 import PageHeader from "../components/layout/PageHeader";
 import { Footer } from '../components/layout/Footer';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';

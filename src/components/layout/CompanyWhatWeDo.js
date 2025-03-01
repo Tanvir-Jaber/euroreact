@@ -49,12 +49,29 @@ const CompanyWhatWeDo = () => {
                                                     <p style={{ textAlign: "justify"}}>{item.description}</p>
                                                 </div>
                                             </div>{/* section title end */}
-                                            {/* <div className="f-flex justify-content-betweeen">
+                                            <div className="align-items-center d-flex  justify-content-betweeen justify-content-between">
                                                 <div className="bottomitem">
-                                                    <div className="icons"></div>
+                                                    <div className="icons">
+                                                        <img width={50} src={'images/arcticons_jobstreet.png'} alt="" srcset="" />
+                                                        <span>20 +</span>
+                                                    </div>
                                                     <div className="text">Jobs</div>
                                                 </div>
-                                            </div> */}
+                                                <div className="bottomitem">
+                                                    <div className="icons">
+                                                        <img width={50} src={'images/fa6-brands_hire-a-helper.png'} alt="" srcset="" />
+                                                        <span>20 +</span>
+                                                    </div>
+                                                    <div className="text">Hired</div>
+                                                </div>
+                                                <div className="bottomitem">
+                                                    <div className="icons">
+                                                        <img width={50} src={'images/material-symbols_person.png'} alt="" srcset="" />
+                                                        <span>20 +</span>
+                                                    </div>
+                                                    <div className="text">Hiring</div>
+                                                </div>
+                                            </div>
 
                                         </div>
                                     </div>{/* row end */}

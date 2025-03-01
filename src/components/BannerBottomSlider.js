@@ -99,7 +99,7 @@ class BannerBottomSlider extends Component {
     ];
 
     return (
-      <div className="container bottomSlider">
+      <div className="container bottomSlider ">
         <Slider {...slick_slider} slidesToShow={3} autoplay={true} >
           {data.map((content, index) => (
             <div key={index} className="slide-item">

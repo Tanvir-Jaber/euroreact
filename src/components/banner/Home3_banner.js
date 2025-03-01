@@ -72,8 +72,8 @@ export class Banner extends Component {
                                     <div className="slide__content--headings ttm-textcolor-white">
                                         <h2 className="animated animate__fadeInDown">We Provide The Best Services For Your Business</h2>
                                         <div className="animated animate__fadeInUp" data-delay="1.4">
-                                            <a className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill ttm-btn-color-skincolor"
-                                                href={process.env.PUBLIC_URL + '/contact_01'}>Contact us</a>
+                                            {/* <a className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill ttm-btn-color-skincolor"
+                                                href={process.env.PUBLIC_URL + '/contact_01'}>Contact us</a> */}
                                         </div>
                                     </div>
                                 </div>
@@ -123,8 +123,8 @@ export class Banner extends Component {
                                             <div className="slide__content--headings ttm-textcolor-white">
                                                 <h2 className="animated animate__fadeInDown">{v.title}</h2>
                                                 <div className="animated animate__fadeInUp" data-delay="1.4">
-                                                    <a className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill ttm-btn-color-skincolor"
-                                                        href={process.env.PUBLIC_URL + '/contact_01'}>Contact us</a>
+                                                    {/* <a className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill ttm-btn-color-skincolor"
+                                                        href={process.env.PUBLIC_URL + '/contact_01'}>Contact us</a> */}
                                                 </div>
                                             </div>
                                         </div>

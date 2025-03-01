@@ -10,14 +10,14 @@ import 'slick-carousel/slick/slick-theme.css';
 const CompanyUserFeedback = () => {
     const [data, setData] = useState([]);
     const [currentSlide, setCurrentSlide] = useState(0);
-
     useEffect(() => {
         let url = `${process.env.REACT_APP_API_URI}/user_feedback`;
         axios.get(url)
-            .then(response => {
-                setData(response.data.data);
-            })
+        .then(response => {
+            setData(response.data.data);
+        })
             .catch(err => { });
+            // console.log('data',data.length)
     }, []);
     useEffect(() => {
         const setEqualHeight = () => {
@@ -104,6 +104,7 @@ const CompanyUserFeedback = () => {
                         {...slick_slider}
                     >
                         {
+                            data.length > 3 ?
                     //    [...Array(3)].map((_,i)=>(
                            data.map((item, index) => (
                                <div
@@ -139,7 +140,44 @@ const CompanyUserFeedback = () => {
                                        </p>
                                    </div>
                                </div>
-                           ))
+                           )) :
+                           [...Array(2)].map((_,i)=>(
+                           data.map((item, index) => (
+                            <div
+                                key={item.id}
+                                className={`testimonial-item1 `}
+                            >
+                                <div className="testimonial-content">
+                                    <div className="testimonial-caption text-center">
+                                        <h3>{item.name}</h3>
+                                        <p className='text-black'>{item.location}</p>
+                                    </div>
+                                    <div className="star-ratings text-center">
+                                        <ul className="rating">
+                                            <li className="active">
+                                                <i className="fa fa-star"></i>
+                                            </li>
+                                            <li className="active">
+                                                <i className="fa fa-star"></i>
+                                            </li>
+                                            <li className="active">
+                                                <i className="fa fa-star"></i>
+                                            </li>
+                                            <li className="active">
+                                                <i className="fa fa-star"></i>
+                                            </li>
+                                            <li className="active">
+                                                <i className="fa fa-star"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <p className="testimonial-text text-black text-center">
+                                        {item.description}
+                                    </p>
+                                </div>
+                            </div>
+                        ))
+                     ))
                        
                         }
                     </Slider>

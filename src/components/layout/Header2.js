@@ -53,7 +53,7 @@ export class Header extends Component {
                             <div className="row">
                                 <div className="col-lg-12">
                                     {/* site-navigation */}
-                                    <div className="py-md-3 my-0  d-flex align-items-center justify-content-between">
+                                    <div className=" my-0  d-flex align-items-center justify-content-between">
                                         {/* site-branding */}
                                         <div className="site-branding">
                                             <Logo_white />

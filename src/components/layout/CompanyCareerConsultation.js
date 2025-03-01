@@ -28,7 +28,7 @@ const CompanyCareerConsultation = () => {
 
                                         <div className="col-lg-6 backgroundColor  ">
                                             {/* section title */}
-                                            <div className="px-5 py-5">
+                                            <div className="px-0 px-md-5 py-5">
                                                 <div className="section-title my-4">
                                                     <div className="title-header">
                                                         <h3 className='themeColor mb-30'>{item.title}</h3>
