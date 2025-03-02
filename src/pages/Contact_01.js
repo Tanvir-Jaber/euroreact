@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from '../components/layout/Header';
+import Header from '../components/layout/Header2';
 import PageHeader from "../components/layout/PageHeader";
 import { Footer } from '../components/layout/Footer';
 import ContactForm from './ContactForm';

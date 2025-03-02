@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -37,7 +37,7 @@ import Staff_Requisition from './pages/Staff_Requisition';
 import CompanyCareer from "../src/components/layout/CompanyCareer"
 // import * as express from "express";
 // import express from 'express';
-
+import axios from 'axios';
 function App() {
 
 
@@ -64,45 +64,58 @@ function App() {
 
   // }, []);
 
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    async function contactLoad() {
+      let url = `${process.env.REACT_APP_API_URI}/contactInfo`;
+      const response = await axios.get(url);
+      // if ((response.data).length > 0)
+        setData(response?.data[0] ?? '');
+      console.log("tannnnnnnnnnnns",response)
+    }
+    contactLoad()
+
+  }, []);
+
 
 
   return (
     <div>
-       <div className="page" id='google_translate_element'>
+      <div className="page" id='google_translate_element'>
         <div className="sideIcon">
-  
+
           <div className="sideIconWraper">
-  
+
             <div className="sideIconBox">
-              <a href="tel:1234567890" className='tooltip-btn'  >
+              <a href="/career" className='tooltip-btn'  >
                 <i className="fa fa-suitcase"></i>
                 <span className="tooltip-text">Job Seeker</span>
               </a>
             </div>
             <div className="sideIconBox">
-              <a href="tel:1234567890" className='tooltip-btn' >
+              <a href="/StaffRequisition" className='tooltip-btn' >
                 <i className="fa fa-users"></i>
                 <span className="tooltip-text">Staff Requisition</span>
               </a>
             </div>
             <div className="sideIconBox">
-              <a href="tel:1234567890" className='tooltip-btn' >
+              <a href={"tel:"+data.phone} className='tooltip-btn' >
                 <i style={{ 'transform': 'rotate(90deg)' }} className="fa fa-phone" aria-hidden="true"></i>
-  
+
                 <span className="tooltip-text">Phone</span>
               </a>
             </div>
             <div className="sideIconBox">
-              <a href="tel:1234567890" className='tooltip-btn' >
+              <a href={"mailto:"+data.email} className='tooltip-btn' >
                 <i className="fa fa-envelope"></i>
                 <span className="tooltip-text">E-mail</span>
               </a>
             </div>
-  
+
           </div>
         </div>
         <Router>
-  
+
           <Route exact path={`${process.env.PUBLIC_URL + '/'}`} component={Home3} />
           <Route exact path={`${process.env.PUBLIC_URL + '/Home2'}`} component={Home2} />
           <Route exact path={`${process.env.PUBLIC_URL + '/Home3'}`} component={Home3} />
@@ -129,11 +142,11 @@ function App() {
           <Route exact path={`${process.env.PUBLIC_URL + '/Candidate_details'}`} component={Candidate_details} />
           <Route exact path={`${process.env.PUBLIC_URL + '/Login'}`} component={Login} />
           <Route exact path={`${process.env.PUBLIC_URL + '/Register'}`} component={Register} />
-  
-  
+
+
           <ScrollToTop />
         </Router>
-       </div>
+      </div>
 
     </div>
   );

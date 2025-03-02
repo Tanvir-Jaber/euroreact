@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./Header";
+import Header from "./Header2";
 import PageHeader from "./PageHeader";
 import { Footer } from "./Footer";
 import CompanyCareerForm from "./CompanyCareerForm";
