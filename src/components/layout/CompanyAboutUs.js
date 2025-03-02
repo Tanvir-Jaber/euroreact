@@ -33,7 +33,7 @@ const CompanyAboutUs = () => {
                                                         <img src="images/dot-pattern.png" className="img-fluid" alt="dot-pattern" />
                                                     </div> */}
                                                     <div className="aboutImageText position-absolute">
-                                                        <h1 className="number">8 +</h1>
+                                                        <h1 className="number">{item.experience} +</h1>
                                                         <p>YEARS EXPERIENCE</p>
                                                     </div>
                                                 </div>

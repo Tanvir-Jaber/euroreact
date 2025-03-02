@@ -53,21 +53,21 @@ const CompanyWhatWeDo = () => {
                                                 <div className="bottomitem">
                                                     <div className="icons">
                                                         <img width={50} src={'images/arcticons_jobstreet.png'} alt="" srcset="" />
-                                                        <span>20 +</span>
+                                                        <span>{item.jobs} +</span>
                                                     </div>
                                                     <div className="text">Jobs</div>
                                                 </div>
                                                 <div className="bottomitem">
                                                     <div className="icons">
                                                         <img width={50} src={'images/fa6-brands_hire-a-helper.png'} alt="" srcset="" />
-                                                        <span>20 +</span>
+                                                        <span>{item.hired} +</span>
                                                     </div>
                                                     <div className="text">Hired</div>
                                                 </div>
                                                 <div className="bottomitem">
                                                     <div className="icons">
                                                         <img width={50} src={'images/material-symbols_person.png'} alt="" srcset="" />
-                                                        <span>20 +</span>
+                                                        <span>{item.hiring} +</span>
                                                     </div>
                                                     <div className="text">Hiring</div>
                                                 </div>
