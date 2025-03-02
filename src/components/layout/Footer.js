@@ -42,12 +42,26 @@ export class Footer extends Component {
                     communication channels!
                   </p>
                   
-                  <a
+                  {/* <a
                     className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-border ttm-btn-color-white"
                     href={process.env.PUBLIC_URL + "/contact_01"}
                   >
                     Request A Free Quotes
-                  </a>
+                  </a> */}
+                  <div className="d-flex socialIcon gap-2">
+                    <a href="https://www.facebook.com/">
+                    <i className="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/">
+                    <i className="fa-brands fa-instagram"></i>
+                    </a>
+                    {/* <a href="https://twitter.com/">
+                      <i className="fa-brands fa-twitter"></i>
+                    </a> */}
+                    <a href="https://www.linkedin.com/">
+                    <i className="fa-brands fa-linkedin-in"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
               <div className="col-xs-12 col-sm-6 col-md-6 col-lg-2 widget-area">

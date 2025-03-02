@@ -2,7 +2,11 @@ import React, { Component, useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import axios from 'axios';
 import stye from '../../assets/css/custom.css'
+import { useLocation } from "react-router-dom";
+
 const Menu = () => {
+    const location = useLocation();
+    const [path, setPath] = useState(location.pathname);
     const [data, setData] = useState([]);
     var services = [];
     useEffect(() => {
@@ -15,6 +19,8 @@ const Menu = () => {
                 console.log(error)
             }
         };
+        // console.log(path);
+        
         fetchData()
     }, []);
 
@@ -23,7 +29,7 @@ const Menu = () => {
             <nav className="main-menu">
                 <ul className="menu">
                     <li className="mega-menu-item">
-                        <a href={process.env.PUBLIC_URL + '/'} className="mega-menu-link2">Home</a>
+                        <a href={process.env.PUBLIC_URL + '/'} className={`mega-menu-link2 ${path == '/'?'active':''}`}>Home</a>
                     </li>
                     <li className="mega-menu-item">
                         <a href="Javascript:void(0)" className="mega-menu-link">Services</a>
@@ -36,13 +42,13 @@ const Menu = () => {
                         </ul>
                     </li>
                     <li className="mega-menu-item">
-                        <a href={process.env.PUBLIC_URL + '/gallery'} className="mega-menu-link2">Gallery</a>
+                        <a href={process.env.PUBLIC_URL + '/gallery'} className={`mega-menu-link2 ${path == '/gallery'?'active':''}`}>Gallery</a>
                     </li>
                     <li className="mega-menu-item">
-                        <a href={process.env.PUBLIC_URL + '/about_us'} className='mega-menu-link2'>About Us</a>
+                        <a href={process.env.PUBLIC_URL + '/about_us'} className={`mega-menu-link2 ${path == '/about_us'?'active':''}`}>About Us</a>
                     </li>
                     <li className="mega-menu-item">
-                        <a href={process.env.PUBLIC_URL + '/contact_01'} className='mega-menu-link2'>Contact us</a>
+                        <a href={process.env.PUBLIC_URL + '/contact_01'} className={`mega-menu-link2 ${path == '/contact_01'?'active':''}`}>Contact us</a>
                     </li>
                 </ul>
             </nav>

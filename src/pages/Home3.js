@@ -20,6 +20,7 @@ import CompanyLatestNews from '../components/layout/CompanyLatestNews';
 import CompanyJobSeeker from '../components/layout/CompanyJobSeeker';
 import BannerBottomSlider from '../components/BannerBottomSlider';
 import FAQ from '../components/layout/FAQ';
+import Path from '../components/layout/Path';
 
 // import { Tooltip } from 'bootstrap';
 
@@ -88,6 +89,7 @@ export class Home3 extends Component {
                 <Header />
                 <Banner />
                 <BannerBottomSlider />
+                <Path />
                 <CompanyAboutUs />
                 {/* <CompanyAboutUs /> */}
                 <ServiceSection />

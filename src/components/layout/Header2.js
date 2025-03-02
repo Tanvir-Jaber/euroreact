@@ -7,6 +7,8 @@ import axios from "axios";
 import CountrySelector from './CountrySelector';
 import GoogleTranslateWidget from './GoogleTranslateWidget';
 
+
+
 export class Header extends Component {
     state = {
         contact_info:'',
@@ -30,23 +32,27 @@ export class Header extends Component {
         this.contactLoad();
         this.cmsLoad();
     }
-
+    
     componentWillUnmount() {
         window.removeEventListener('scroll', this.isSticky);
     }
-
+    
     isSticky = (e) => {
         const header = document.querySelector('header');
         const scrollTop = window.scrollY;
         scrollTop >= 250 ? header.classList.add('is-Sticky') : header.classList.remove('is-Sticky');
     };
-
+    
     render() {
         const { contact_info,cms } = this.state;
+        
+     
+        
         return (
 
             <header id="masthead" className="header ttm-header-style-02 bg-theme-DarkColor">
                 {/* site-header-menu */}
+                
                 <div id="site-header-menu" className="site-header-menu">
                     <div className="site-header-menu-inner ttm-stickable-header">
                         <div className="container">
@@ -104,7 +110,7 @@ export class Header extends Component {
                                             </div> */}
                                             <div className="d-flex align-items-center justify-content-between">
                                                 {/* menu */}
-                                                <Menu />
+                                                <Menu  />
                                                 <div className="mobile-menu"><Mobile_menu /></div>
                                                 {/* menu end */}
                                                 

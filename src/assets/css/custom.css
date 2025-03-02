@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 body{
-/* font-family: 'Poltawski Nowy'; */
-font-family: "Montserrat", sans-serif;
+/* font-family: "Montserrat", sans-serif; */
+font-family: "Montserrat", sans-serif ;
 font-style: normal;
 font-weight: 400;
 }
@@ -15,7 +15,7 @@ font-weight: 400;
     padding: 16px 15px;
     border-bottom: 3px solid;
     border-bottom-color: #EDBA75;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    font-family: "Montserrat", sans-serif;
 }
 /* .accordion-button::after{
     content: "";
@@ -37,7 +37,7 @@ font-weight: 400;
 }
 .content-staff-service-btn a{
     color: white;
-    font-family: ui-monospace;
+    font-family: "Montserrat", sans-serif;
 }
 .section-sub-title{
     margin-top: 50px;
@@ -46,7 +46,7 @@ font-weight: 400;
     color: #EDBA75;
 }
 .section-head h2{
-    font-family: 'themify';
+    font-family: "Montserrat", sans-serif;
 }
 .content-staff-service{
     margin-top: 30px;
@@ -56,15 +56,16 @@ font-weight: 400;
     /* margin-top: 30px; */
 }
 .content-staff-service .header span{
-    border-radius: 50%;
-    padding: 30px 30px;
+    /* border-radius: 50%;
+    padding: 30px 30px; */
     /* background: #EDBA75; */
     
 }
-.content-staff-service .header span i{
+.content-staff-service .header span svg{
     color: #EDBA75;
     font-size: 50px;
     vertical-align: middle;
+    padding-bottom: 10px;
 
 }
 .custom-footer-link li{
@@ -122,7 +123,7 @@ font-weight: 400;
     font-size: 45px;
 }
   .content-wrapper > h5{
-font-family: 'Poppins';
+font-family: "Montserrat",'Poppins';
 font-style: normal;
 font-weight: 700;
 font-size: 20.4px;
@@ -227,7 +228,8 @@ margin: 10px 0 0 0;
 }
 .aboutImageText p{
 
-font-family: 'Poltawski Nowy';
+font-family: "Montserrat", sans-serif;
+/* font-family: 'Poltawski Nowy'; */
 font-style: normal;
 font-weight: 700;
 font-size: 22.9529px;
@@ -246,7 +248,8 @@ color: #FFFFFF;
     text-align: center;
 }
 .aboutImageText h1 {
-    font-family: 'Poltawski Nowy';
+    /* font-family: 'Poltawski Nowy'; */
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 67.605px;
@@ -278,7 +281,7 @@ color: #FFFFFF;
     padding: 50px 0;
 }
 .section-title .title-header h2.title {
-    font-family: 'Poltawski Nowy';
+    font-family: "Montserrat", sans-serif;
     /* font-family: "Playfair Display", Sans-serif; */
     font-size: 42px;
     font-weight: 600;
@@ -293,7 +296,7 @@ color: #FFFFFF;
     line-height: 25px;
     padding-bottom: 8px;
     margin: 0;
-    font-family: 'Poppins';
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16.4px;
@@ -367,7 +370,8 @@ button.btn.btn-primary.float-end {
 }
 
 .backgroundColor{
-    background-color: #192535;
+    /* background-color: #192535; */
+    background: linear-gradient(90deg, #192535 -4.76%, #082956 103.68%);
     color: #fff;
 }
 .company .section-title .title-header h3{
@@ -385,7 +389,7 @@ button.btn.btn-primary.float-end {
     margin-top: 90px;
 }
 .section-sub-title span{
-    font-family: 'Poltawski Nowy';
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16.3882px;
@@ -393,7 +397,7 @@ button.btn.btn-primary.float-end {
     color: #0084C2;
 }
 .section-head h2 {
-    font-family: 'Poltawski Nowy';
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 42px;
@@ -611,7 +615,7 @@ button.btn.btn-primary.float-end {
   line-height: 21px;
 }
 .areyouajob{
-    font-family: 'Poltawski Nowy';
+    font-family: "Montserrat", sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 30px;
@@ -665,20 +669,49 @@ line-height: 47px;
             line-clamp: 3;
     -webkit-box-orient: vertical; */
 }
-
+.ttm-header-style-02.is-Sticky .site-header-menu {
+  /* background-color: #111922; */
+  background: linear-gradient(90deg, #1B232D 0%, #11335D 100%);
+}
 
 .testimonial-item {
     height: 100%;
     display: flex !important; 
   }
-  
+  .ttm-header-style-02 #site-header-menu .site-navigation ul.menu > li > a.active {
+    color: #0085C2;
+}
+.socialIcon a{
+  background-color: #51bbbf;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.socialIcon a svg{
+    font-size: 25px;
+    color: #000000;
+}
+.goog-te-gadget {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  color: #666;
+  white-space: nowrap;
+  display: none;
+}
   .testimonial-content {
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* min-height: 230px;  */
+    min-height: 230px; 
   }
-  
+  .footer .footer-logo img {
+    /* max-height: 64px; */
+    width: 200px;
+    height: auto;
+}
 
   
 
@@ -699,7 +732,7 @@ line-height: 47px;
   .newstitle{
     font-size: 18px;
     padding: 0;
-    font-family: 'Poltawski Nowy';
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 900;
     line-height: 30px;
@@ -708,7 +741,7 @@ line-height: 47px;
   .newsdescription{
     margin-top: 10px;
     font-size: 13px;
-    font-family: 'Poltawski Nowy';
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
@@ -936,10 +969,19 @@ nav.main-menu {
     font-family: "Syne", sans-serif !important;
     padding: 0px !important;
   }
-  
   .goog-te-gadget .goog-te-combo option {
     color: black !important;
-  } */
+    } */
+    .slick-slide:not(.slick-active.slick-current) .animated{
+      font-family: "Montserrat", sans-serif;
+    }
+    .ttm-header-style-02 #site-header-menu .site-navigation ul.menu > li > a{
+      font-family: "Montserrat", sans-serif;
+
+    }
+    h2.animated.animate__fadeInDown.text-center {
+      font-family: 'Montserrat';
+  }
   body{
     top: 0 !important;
   }

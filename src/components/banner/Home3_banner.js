@@ -65,19 +65,19 @@ export class Banner extends Component {
             <Slider className="slick_slider banner_slider banner_slider_3" {...slick_slider} slidesToShow={1} autoplay={true} fade="true" >
                 <div className="slide bg-layer">
                     <div className="slide_img" style={{ backgroundImage: 'url(/images/slider-mainbg-005.jpg)' }}></div>
-                    <div className="slide__content pb-50 pb-xl-0 pt-130 pt-xl-0">
+                    <div className="slide__content pb-30 pb-xl-0  pt-xl-0">
                         <div className="container">
-                            <div className="row">
-                                <div className="col-lg-6 col-md-8">
+                            <div className="row  justify-content-center">
+                                <div className="col-lg-6 col-md-8 text-center">
                                     <div className="slide__content--headings ttm-textcolor-white">
-                                        <h2 className="animated animate__fadeInDown">We Provide The Best Services For Your Business</h2>
+                                        <h2 className="animated animate__fadeInDown text-center">We Provide The Best Services For Your Business</h2>
                                         <div className="animated animate__fadeInUp" data-delay="1.4">
                                             {/* <a className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill ttm-btn-color-skincolor"
                                                 href={process.env.PUBLIC_URL + '/contact_01'}>Contact us</a> */}
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-lg-6">
+                                {/* <div className="col-lg-6">
                                     <div className="d-none  text-center position-relative">
                                         <div className="z-index-1 position-relative">
                                             <img className="rounded-circle box-shadow m-auto img-fuild" src={process.env.PUBLIC_URL + "/images/single-01.jpg"}></img>
@@ -104,7 +104,7 @@ export class Banner extends Component {
                                             <img src="/images/slides/arrow-2.png" />
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -116,19 +116,19 @@ export class Banner extends Component {
                         console.log((v.image).replace("\\", "/"))
                         return (<div className="slide bg-layer">
                             <div className="slide_img" style={{ backgroundImage: `url(${process.env.REACT_APP_ASSET_URL+"/"+(v.image).replace("\\", "/")})` }}></div>
-                            <div className="slide__content pb-50 pb-xl-0 pt-130 pt-xl-0">
+                            <div className="slide__content pb-30 pb-xl-0  pt-xl-0">
                                 <div className="container">
-                                    <div className="row align-items-center">
+                                    <div className="row align-items-center justify-content-center">
                                         <div className="col-lg-6 col-md-8">
                                             <div className="slide__content--headings ttm-textcolor-white">
-                                                <h2 className="animated animate__fadeInDown">{v.title}</h2>
+                                                <h2 className="animated animate__fadeInDown text-center">{v.title}</h2>
                                                 <div className="animated animate__fadeInUp" data-delay="1.4">
                                                     {/* <a className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill ttm-btn-color-skincolor"
                                                         href={process.env.PUBLIC_URL + '/contact_01'}>Contact us</a> */}
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="col-lg-6">
+                                        {/* <div className="col-lg-6">
                                             <div className="d-none  text-center position-relative">
                                                 <div className="z-index-1 position-relative">
                                                     <img className="rounded-circle box-shadow m-auto img-fuild" src={process.env.PUBLIC_URL + "/images/single-01.jpg"}></img>
@@ -155,7 +155,7 @@ export class Banner extends Component {
                                                     <img src="/images/slides/arrow-2.png" />
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>
