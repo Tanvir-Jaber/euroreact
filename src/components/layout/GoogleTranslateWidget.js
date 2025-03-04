@@ -24,60 +24,67 @@ const GoogleTranslateWidget = () => {
     if (!scriptLoaded.current) {
       const addGoogleTranslateScript = () => {
         const script = document.createElement("script");
-        script.id = "google-translate-script";
-        script.type = "text/javascript";
-        script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+        // script.id = "google-translate-script";
+        // script.type = "text/javascript";
+        script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
         script.async = true;
-        script.onerror = (error) => {
-          console.error("Failed to load Google Translate script:", error);
-        };
+        
         document.body.appendChild(script);
       };
 
       window.googleTranslateElementInit = () => {
-        try {
-          translateInstance.current = new window.google.translate.TranslateElement(
-            {
-              pageLanguage: "en",
-              includedLanguages: "en,nl,pt,fr,de,es,uk",
-              layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
-            },
-            "google_translate_element"
-          );
+        translateInstance.current = new window.google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages: "en,nl,pt,fr,de,es,uk",
+          
+          },
+          "google_translate_element"
+        );
 
-          // Set up MutationObserver
-          observerRef.current = new MutationObserver(() => {
-            const selectBox = document.querySelector(".goog-te-combo");
-            if (selectBox && !selectBoxRef.current) {
-              selectBoxRef.current = selectBox;
-              selectBoxRef.current.value = selectedLang;
+        // try {
+        //   translateInstance.current = new window.google.translate.TranslateElement(
+        //     {
+        //       pageLanguage: "en",
+        //       includedLanguages: "en,nl,pt,fr,de,es,uk",
+        //       layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
+        //     },
+        //     "google_translate_element"
+        //   );
+
+        //   // Set up MutationObserver
+        //   observerRef.current = new MutationObserver(() => {
+        //     const selectBox = document.querySelector(".goog-te-combo");
+        //     if (selectBox && !selectBoxRef.current) {
+        //       selectBoxRef.current = selectBox;
+        //       selectBoxRef.current.value = selectedLang;
               
-              const changeHandler = (event) => {
-                setSelectedLang(event.target.value);
-              };
-              selectBoxRef.current.addEventListener("change", changeHandler);
-            }
-          });
+        //       const changeHandler = (event) => {
+        //         setSelectedLang(event.target.value);
+        //       };
+        //       selectBoxRef.current.addEventListener("change", changeHandler);
+        //     }
+        //   });
 
-          observerRef.current.observe(document.body, {
-            childList: true,
-            subtree: true
-          });
+        //   observerRef.current.observe(document.body, {
+        //     childList: true,
+        //     subtree: true
+        //   });
 
-        } catch (error) {
-          console.error("Google Translate initialization error:", error);
-        }
+        // } catch (error) {
+        //   console.error("Google Translate initialization error:", error);
+        // }
       };
 
       addGoogleTranslateScript();
       scriptLoaded.current = true;
     }
 
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
-    };
+    // return () => {
+    //   if (observerRef.current) {
+    //     observerRef.current.disconnect();
+    //   }
+    // };
   }, []);
 
   // Synchronize selected language
