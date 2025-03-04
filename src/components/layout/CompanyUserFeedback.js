@@ -29,11 +29,11 @@ const CompanyUserFeedback = () => {
           });
           items.forEach((item) => (item.style.height = `${maxHeight}px`));
         };
-    
+        
         setEqualHeight();
         window.addEventListener("resize", setEqualHeight);
         return () => window.removeEventListener("resize", setEqualHeight);
-      }, []);
+      }, [data]);
 
     var slick_slider = {
         dots: false,

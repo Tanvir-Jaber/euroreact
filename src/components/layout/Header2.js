@@ -5,7 +5,7 @@ import Logo_white from './Logo_white'
 import Header_search from './Header_search'
 import axios from "axios";
 import CountrySelector from './CountrySelector';
-import GoogleTranslateWidget from './GoogleTranslateWidget';
+import GoogleTranslateWidget from './GoogleTranslateWidget1';
 
 
 

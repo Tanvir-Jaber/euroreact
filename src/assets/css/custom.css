@@ -1005,6 +1005,31 @@ nav.main-menu {
     scale: 1;
     margin: 0 10px;
 }
+.custom-language-selector {
+
+  margin: 0 !important;
+}
+.site-navigation {
+  order: -1;
+}
+.custom-select{
+  background: #fff;
+}
+.header_btn{
+  display: block !important;
+}
+.selected-option> img {
+  margin: 0 !important;
+}
+.custom-select {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: 30px;
+  width: 45px;
+}
 .pt-70.pt-md-50.pl-70.pl-md-0 {
   margin-top: 140px;
 }

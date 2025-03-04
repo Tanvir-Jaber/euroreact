@@ -12,6 +12,21 @@ const CompanyLatestNews = () => {
             .catch(err => {
             });
     }, []);
+     useEffect(() => {
+            const setEqualHeight = () => {
+              let maxHeight = 0;
+              const items = document.querySelectorAll(".testimonials5");
+              items.forEach((item) => {
+                item.style.height = "auto"; 
+                maxHeight = Math.max(maxHeight, item.offsetHeight);
+              });
+              items.forEach((item) => (item.style.height = `${maxHeight}px`));
+            };
+            
+            setEqualHeight();
+            window.addEventListener("resize", setEqualHeight);
+            return () => window.removeEventListener("resize", setEqualHeight);
+          }, [data]);
     var slick_slider = {
         dots: false,
         arrow: false,
@@ -84,7 +99,7 @@ const CompanyLatestNews = () => {
                         {
                             data.map((item) => {
                                 return (
-                                    <div className="col-lg-12 d-flex">
+                                    <div className="col-lg-12 d-flex testimonials5 ">
                                         {/* testimonials */}
                                         <div className="testimonials ttm-testimonial-box-view-style1">
                                             <div className="testimonial-content testimonial-content1">
