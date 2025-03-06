@@ -20,7 +20,7 @@ const CompanyAboutUs = () => {
             {
                 data.map((item) => {
                     return (
-                        <div className="site-main">
+                        <div key={item.id} className="site-main">
                             {/* about-section */}
                             <section className="ttm-row about-section clearfix">
                                 <div className="container">

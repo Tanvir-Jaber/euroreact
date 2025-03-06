@@ -87,7 +87,7 @@ export class Footer extends Component {
                   <h3 className="widget-title">Quick Links</h3>
                   <ul className="widget-post ttm-recent-post-list custom-footer-link">
                     {service_menu.map((v) => {
-                      return (<li><a href={process.env.PUBLIC_URL + '/services/' + v.id}>{v.title}</a></li>)
+                      return (<li key={v.id}><a href={process.env.PUBLIC_URL + '/services/' + v.id}>{v.title}</a></li>)
                     })
                     }
                   </ul>

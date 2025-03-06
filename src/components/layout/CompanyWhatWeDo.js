@@ -20,7 +20,7 @@ const CompanyWhatWeDo = () => {
             {
                 data.map((item) => {
                     return (
-                        <div className="site-main company">
+                        <div key={item.id} className="site-main company">
                             {/* about-section */}
                             <section className="ttm-row about-section clearfix backgroundColor">
                                 <div className="container">
@@ -54,7 +54,7 @@ const CompanyWhatWeDo = () => {
                                             <div className="align-items-center d-flex  justify-content-betweeen justify-content-between">
                                                 <div className="bottomitem">
                                                     <div className="icons">
-                                                        <img width={50} src={'images/arcticons_jobstreet.png'} alt="" srcset="" />
+                                                        <img width={50} src={'images/arcticons_jobstreet.png'} alt="" />
                                                             <ScrollTrigger onEnter={() => { setCounter(true) }} onExit={() => { setCounter(false) }}>
                                                         <span>
                                                                 {counter && <CountUp start={0} end={item.jobs} />} +
@@ -65,7 +65,7 @@ const CompanyWhatWeDo = () => {
                                                 </div>
                                                 <div className="bottomitem">
                                                     <div className="icons">
-                                                        <img width={50} src={'images/fa6-brands_hire-a-helper.png'} alt="" srcset="" />
+                                                        <img width={50} src={'images/fa6-brands_hire-a-helper.png'} alt="" />
                                                             <ScrollTrigger onEnter={() => { setCounter(true) }} onExit={() => { setCounter(false) }}>
                                                         <span>
                                                                 {counter && <CountUp start={0} end={item.hired} />} +
@@ -76,7 +76,7 @@ const CompanyWhatWeDo = () => {
                                                 </div>
                                                 <div className="bottomitem">
                                                     <div className="icons">
-                                                        <img width={50} src={'images/material-symbols_person.png'} alt="" srcset="" />
+                                                        <img width={50} src={'images/material-symbols_person.png'} alt="" />
                                                             <ScrollTrigger onEnter={() => { setCounter(true) }} onExit={() => { setCounter(false) }}>
                                                         <span>
                                                                 {counter && <CountUp start={0} end={item.hiring} />} +

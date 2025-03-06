@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import Slider from 'react-slick';
-import ProgressBar from 'react-animated-progress-bar';
+
 import Header from '../components/layout/Header';
 import PageHeader from "../components/layout/PageHeader";
 import { Footer } from '../components/layout/Footer';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import CountUp from 'react-countup';
 import ServiceSection from './ServiceSection';
 
 
@@ -19,39 +16,6 @@ export class Services extends Component {
     };
   }
     render() {
-      var slick_slider = {
-        dots: false,
-        arrow: false,
-        autoplay: true,
-        infinite: true,
-        speed: 1000,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        rows: 1,
-
-        responsive: [ {
-
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3
-            }
-        },{
-    
-          breakpoint: 778,
-          settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2
-          }
-      },
-      {
-          breakpoint: 575,
-          settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-          }
-      }]
-      };
         
         return (       
           <div className="site-main">

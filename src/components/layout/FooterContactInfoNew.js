@@ -11,26 +11,7 @@ const FooterContactInfoNew = () => {
   useEffect(() => {
 
     
-    function performSignIn() {
-      let headers = new Headers();
-      let url = `${process.env.REACT_APP_API_URI}/contactInfo`;
-      headers.append('Content-Type', 'application/json');
-      headers.append('Accept', 'application/json');
-      // headers.append('Origin', 'http://localhost:3000');
-
-      fetch(url, {
-        mode: 'no-cors',
-        credentials: 'include',
-        method: 'GET',
-        cache: 'no-cache',
-        headers: headers
-      })
-        .then(response => response.json())
-        .then(json => console.log(json))
-        .catch(error => console.log('Authorization failed: ' + error.message));
-    }
-
-    performSignIn()
+    
 
     
     const fetchData = async () => {
@@ -60,7 +41,7 @@ const FooterContactInfoNew = () => {
         {data.length > 0 ? (
           data.map(item => (
 
-            <ul className="widget_contact_wrapper" >
+            <ul key={item.id} className="widget_contact_wrapper" >
               <li>
                 <i className="ttm-textcolor-skincolor flaticon-phone-call"></i>
                 <h3>Call Us On:</h3> {item.phone}

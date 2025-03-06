@@ -55,7 +55,7 @@ export class Gallery extends Component {
                             {
                                ( galleries).map((v)=>{
                                     return (
-                                        <div className='col-md-4'>
+                                        <div key={v.id} className='col-md-4'>
                                             <img width="100%" className='img-fluid' src={process.env.REACT_APP_ASSET_URL+"/"+ v.image_url}/>
                                         </div>
                                     )

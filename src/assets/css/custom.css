@@ -709,7 +709,7 @@ line-height: 47px;
   }
   .footer .footer-logo img {
     /* max-height: 64px; */
-    width: 200px;
+    width: auto;
     height: auto;
 }
 

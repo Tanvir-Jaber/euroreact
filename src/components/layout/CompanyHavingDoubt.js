@@ -109,7 +109,7 @@ const CompanyHavingDoubt = (props) => {
                                         {
                                             data.map((itme) => {
                                                 return (
-                                                    <option value={itme.id}>{itme.title}</option>
+                                                    <option key={itme.id} value={itme.id}>{itme.title}</option>
                                                 )
                                             })
                                         }

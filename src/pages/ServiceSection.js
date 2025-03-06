@@ -1,12 +1,9 @@
-import Slider from 'react-slick';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const ServiceSection = () => {
 
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     // Fetch data using axios
@@ -26,39 +23,7 @@ const ServiceSection = () => {
 
 
 
-  var slick_slider = {
-    dots: false,
-    arrow: false,
-    autoplay: true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    rows: 1,
-
-    responsive: [{
-
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3
-      }
-    }, {
-
-      breakpoint: 778,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    },
-    {
-      breakpoint: 575,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }]
-  };
+ 
 
   return (
     <>
@@ -78,9 +43,9 @@ const ServiceSection = () => {
               </div>{/* section title end */}
             </div>
             {
-              data.map(item => (
+              data.map((item) => (
 
-                <div className="col-xl-4 col-sm-6">
+                <div key={item.id} className="col-xl-4 col-sm-6">
                   {/* featured-imagebox */}
                   <div className="featured-imagebox featured-imagebox-services style1 row content-wrapper1">
                     {/* featured-thumbnail */}

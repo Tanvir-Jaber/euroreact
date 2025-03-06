@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-import Slider from 'react-slick';
-import ProgressBar from 'react-animated-progress-bar';
 import Header from '../components/layout/Header2';
 import { Banner } from '../components/banner/Home3_banner';
 import { Footer } from '../components/layout/Footer';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import CountUp from 'react-countup';
-import CategorySection from "./CategorySection";
 import ServiceSection from "./ServiceSection";
 import ServiceNewStaff from "./ServiceNewStaff";
 import axios from "axios";
-import { Accordion } from 'react-bootstrap-accordion'
-import style from "../../src/assets/css/custom.css"
+import "../../src/assets/css/custom.css"
 import CompanyAboutUs from '../components/layout/CompanyAboutUs';
 import CompanyWhatWeDo from '../components/layout/CompanyWhatWeDo';
 import CompanyCareerConsultation from '../components/layout/CompanyCareerConsultation';
@@ -22,7 +16,6 @@ import BannerBottomSlider from '../components/BannerBottomSlider';
 import FAQ from '../components/layout/FAQ';
 import Path from '../components/layout/Path';
 
-// import { Tooltip } from 'bootstrap';
 
 export class Home3 extends Component {
     state = {
