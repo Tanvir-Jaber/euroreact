@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,7 +6,6 @@ import './css/vendor/flaticon.css';
 import './css/vendor/fontawesome.min.css';
 import './css/vendor/themify-icons.css';
 
-import Home from './pages/Home';
 import Home2 from './pages/Home2';
 import Home3 from './pages/Home3';
 
@@ -32,7 +31,7 @@ import Candidate_details from './pages/Candidate_details';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ScrollToTop from './components/layout/Gotop';
-import HomeNew from './pages/HomeNew';
+
 import Staff_Requisition from './pages/Staff_Requisition';
 import CompanyCareer from "../src/components/layout/CompanyCareer"
 // import * as express from "express";
@@ -71,7 +70,6 @@ function App() {
       const response = await axios.get(url);
       // if ((response.data).length > 0)
         setData(response?.data[0] ?? '');
-      console.log("tannnnnnnnnnnns",response)
     }
     contactLoad()
 
@@ -81,7 +79,7 @@ function App() {
 
   return (
     <div>
-      <div className="page" id='google_translate_element'>
+      <div className="page" id='xxgoogle_translate_element'>
         <div className="sideIcon">
 
           <div className="sideIconWraper">

@@ -35,7 +35,7 @@ const Menu = () => {
                         <a href="Javascript:void(0)" className="mega-menu-link">Services</a>
                         <ul className="mega-submenu">
                             {data.map((v) => {
-                                return (<li><a href={process.env.PUBLIC_URL + '/services/' + v.id}>{v.title}</a></li>)
+                                return (<li key={v.id}><a href={process.env.PUBLIC_URL + '/services/' + v.id}>{v.title}</a></li>)
                             })
                             }
 

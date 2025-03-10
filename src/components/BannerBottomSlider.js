@@ -90,13 +90,7 @@ class BannerBottomSlider extends Component {
     //   ]
     // };
 
-    const slideContent = [
-      "International Job Seeking",
-      "International Job Seeking",
-      "International Job Seeking",
-      "International Job Seeking",
-      "International Job Seeking"
-    ];
+   
 
     return (
       <div className="container bottomSlider ">

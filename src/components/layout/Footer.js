@@ -5,20 +5,26 @@ import axios from "axios";
 import style from "../../assets/css/custom.css";
 export class Footer extends Component {
   state = {
-    service_menu: []
+    service_menu: [],
+    footer_content: ''
   }
   async servicemenusLoad() {
     let url = `${process.env.REACT_APP_API_URI}/serviceSection`;
     const response = await axios.get(url);
     this.setState({ service_menu: response?.data ?? [] });
-    
+  }
+  async footerContentLoad() {
+    let url = `${process.env.REACT_APP_API_URI}/footer-content`;
+    const response = await axios.get(url);
+    this.setState({ footer_content: response?.data ?? '' });
   }
   componentDidMount() {
     this.servicemenusLoad();
+    this.footerContentLoad();
   }
 
   render() {
-    const { service_menu } = this.state;
+    const { service_menu,footer_content } = this.state;
     return (
       <footer className="footer widget-footer bg-theme-DarkColor text-theme-WhiteColor clearfix">
         <div className="second-footer">
@@ -36,10 +42,7 @@ export class Footer extends Component {
                     />
                   </div>
                   <p>
-                    At {process.env.REACT_APP_NAME}, we’re more than just a service provider.
-                    We’re your partner in success.Feel free to adjust the
-                    content according to your brand's tone and specific
-                    communication channels!
+                    {footer_content.description}
                   </p>
                   
                   {/* <a
@@ -66,7 +69,7 @@ export class Footer extends Component {
               </div>
               <div className="col-xs-12 col-sm-6 col-md-6 col-lg-2 widget-area">
                 <div className="widget widget-recent-post clearfix">
-                  <h3 className="widget-title">Usefull Links</h3>
+                  <h3 className="widget-title">Useful Links</h3>
                   <ul className="widget-post ttm-recent-post-list custom-footer-link">
                     <li><a href={process.env.PUBLIC_URL + '/'}>Home</a></li>
                     <li><a href={process.env.PUBLIC_URL + '/gallery'}>Gallery</a></li>
@@ -87,7 +90,7 @@ export class Footer extends Component {
                   <h3 className="widget-title">Quick Links</h3>
                   <ul className="widget-post ttm-recent-post-list custom-footer-link">
                     {service_menu.map((v) => {
-                      return (<li><a href={process.env.PUBLIC_URL + '/services/' + v.id}>{v.title}</a></li>)
+                      return (<li key={v.id}><a href={process.env.PUBLIC_URL + '/services/' + v.id}>{v.title}</a></li>)
                     })
                     }
                   </ul>

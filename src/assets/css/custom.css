@@ -709,7 +709,7 @@ line-height: 47px;
   }
   .footer .footer-logo img {
     /* max-height: 64px; */
-    width: 200px;
+    width: auto;
     height: auto;
 }
 
@@ -886,6 +886,11 @@ nav.main-menu {
     border-radius: 5px;
     padding: 4px;
     z-index: 90;
+    width: 160px;
+    border: 1px solid;
+}
+.dropdown-option{
+  padding: 8px;
 }
   
   .custom-language-selector .flag {
@@ -926,6 +931,9 @@ nav.main-menu {
     outline: none;
   }
   
+  .bottomtext{
+    margin-top: auto;
+  }
   .VIpgJd-ZVi9od-ORHb-OEVmcd {
     display: none !important;
   }

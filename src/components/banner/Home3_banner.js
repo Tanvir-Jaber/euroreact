@@ -113,8 +113,7 @@ export class Banner extends Component {
                 {
 
                     sliders.map((v) => {
-                        console.log((v.image).replace("\\", "/"))
-                        return (<div className="slide bg-layer">
+                        return (<div key={v.id} className="slide bg-layer">
                             <div className="slide_img" style={{ backgroundImage: `url(${process.env.REACT_APP_ASSET_URL+"/"+(v.image).replace("\\", "/")})` }}></div>
                             <div className="slide__content pb-30 pb-xl-0  pt-xl-0">
                                 <div className="container">

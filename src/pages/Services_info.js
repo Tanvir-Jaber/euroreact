@@ -1,4 +1,4 @@
-import React, { Component, dangerouslySetInnerHTML } from 'react';
+import React, { Component } from 'react';
 import Header from '../components/layout/Header2';
 import PageHeader from "../components/layout/PageHeader";
 import { Footer } from '../components/layout/Footer';
@@ -69,7 +69,7 @@ export class Services_details extends Component {
                     sub.map((item, i) => {
                         if (i % 2 == 0) {
                             return (
-                                <div className="ttm-row sidebar ttm-sidebar clearfix backgroundColor">
+                                <div key={item.id} className="ttm-row sidebar ttm-sidebar clearfix backgroundColor">
                                     <div className="container">
                                         {/* row */}
                                         <div className="row align-items-center">
@@ -95,7 +95,7 @@ export class Services_details extends Component {
                         }
                         else {
                             return (
-                                <div className="ttm-row sidebar ttm-sidebar clearfix">
+                                <div key={item.id} className="ttm-row sidebar ttm-sidebar clearfix">
                                     <div className="container">
                                         {/* row */}
                                         <div className="row align-items-center ">

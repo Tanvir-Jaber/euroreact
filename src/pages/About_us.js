@@ -51,7 +51,7 @@ export class About_us extends Component {
                 {
                     data.map((item) => {
                         return (
-                            <div className="site-main">
+                            <div key={item.id} className="site-main">
                                 {/* about-section */}
                                 <section className="ttm-row about-section clearfix">
                                     <div className="container">
@@ -97,7 +97,7 @@ export class About_us extends Component {
                             service.map((item) => {
                                 return (
 
-                                    <div className='col-md-2 text-center'>
+                                    <div key={item.id} className='col-md-2 text-center'>
                                         <div style={{ border: "1px solid", padding: "25px", borderRadius: "5px", height: "20vh" }} >
                                             <span><i className={`${item.icon}`} aria-hidden="true"></i></span>
                                             <h6 className='text-center'>{item.title}</h6>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import style from "../assets/css/custom.css"
+import "../assets/css/custom.css"
 import axios from "axios";
 import { useEffect, useState } from "react";
 

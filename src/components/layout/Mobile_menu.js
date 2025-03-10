@@ -61,7 +61,7 @@ class Mobile_menu extends Component {
                     {
                       service.map((item) => {
                         return(
-                          <MDBDropdownItem href={process.env.PUBLIC_URL + '/services/'+item.id}>{item.title}</MDBDropdownItem>
+                          <MDBDropdownItem key={item.id} href={process.env.PUBLIC_URL + '/services/'+item.id}>{item.title}</MDBDropdownItem>
                         )
                       })
                     }

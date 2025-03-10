@@ -10,7 +10,6 @@ function FAQ({faq}) {
             let url = `${process.env.REACT_APP_API_URI}/faq/image`;
             const response = await axios.get(url);
             setData(response?.data );
-            console.log(data)
         }   
         faqLoad();
     }, []);
@@ -31,7 +30,7 @@ function FAQ({faq}) {
                                     //     backgroundImage: `url(${process.env.PUBLIC_URL}/images/Group-11.jpg)`, backgroundSize: "contain"
                                     // }}
                                 >
-                                    <img src={`${process.env.REACT_APP_ASSET_URL}/${data.image_url}`} alt="img" srcset="" className='img-fluit' />
+                                    <img src={`${process.env.REACT_APP_ASSET_URL}/${data.image_url}`} alt="img"  className='img-fluit' />
                                 </div>
                                 <div className="layer-content"></div>
 
@@ -46,13 +45,9 @@ function FAQ({faq}) {
                                             let regex = /(<([^>]+)>)/gi;
                                             let result = (v.answer).replace(regex, "");
                                             return (
-                                                <>
+                                                
 
-                                                    {/* <Accordion title={v.question}>
-                                                                  {result}
-                                                              </Accordion> */}
-
-                                                    <div className="accordion-item" key={i}>
+                                                    <div key={i} className="accordion-item" >
                                                         <div
                                                             className="accordion-header"
                                                             onClick={() => setActiveIndex(activeIndex === i ? null : i)}
@@ -67,7 +62,6 @@ function FAQ({faq}) {
                                                             {result}
                                                         </div>
                                                     </div>
-                                                </>
 
                                             )
                                         })}
