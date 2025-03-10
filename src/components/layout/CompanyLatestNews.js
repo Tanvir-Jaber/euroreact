@@ -97,9 +97,9 @@ const CompanyLatestNews = () => {
 
                     >
                         {
-                            data.map((item) => {
+                            data.map((item,index) => {
                                 return (
-                                    <div className="col-lg-12 d-flex testimonials5 ">
+                                    <div className="col-lg-12 d-flex testimonials5 " key={index}>
                                         {/* testimonials */}
                                         <div className="testimonials ttm-testimonial-box-view-style1">
                                             <div className="testimonial-content testimonial-content1">

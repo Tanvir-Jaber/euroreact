@@ -16,9 +16,9 @@ const CompanyAboutUs = () => {
     return (
         <>
             {
-                data.map((item) => {
+                data.map((item, index) => {
                     return (
-                        <div className="site-main">
+                        <div className="site-main" key={index}>
                             {/* about-section */}
                             <section className="ttm-row about-section clearfix">
                                 <div className="container">
