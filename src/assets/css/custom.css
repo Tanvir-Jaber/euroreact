@@ -886,6 +886,11 @@ nav.main-menu {
     border-radius: 5px;
     padding: 4px;
     z-index: 90;
+    width: 160px;
+    border: 1px solid;
+}
+.dropdown-option{
+  padding: 8px;
 }
   
   .custom-language-selector .flag {
