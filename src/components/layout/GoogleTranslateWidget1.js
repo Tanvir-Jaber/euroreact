@@ -82,7 +82,10 @@ const GoogleTranslateWidget1 = () => {
                   alt={selectedLanguage.name}
                   style={{ width: "20px", height: "15px", marginRight: "8px" }}
                 />
-                {/* {selectedLanguage.name} */}
+                <span>
+                {selectedLanguage.name}
+
+                </span>
               </>
             )}
           </div>
@@ -100,7 +103,10 @@ const GoogleTranslateWidget1 = () => {
                     alt={lang.name}
                     style={{ width: "20px", height: "15px", marginRight: "8px" }}
                   />
+                  <span>
+
                   {lang.name}
+                  </span>
                 </div>
               ))}
             </div>
