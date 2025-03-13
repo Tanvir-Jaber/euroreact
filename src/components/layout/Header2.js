@@ -11,13 +11,13 @@ import GoogleTranslateWidget from './GoogleTranslateWidget1';
 
 export class Header extends Component {
     state = {
-        contact_info:'',
-        cms : ''
+        contact_info: '',
+        cms: ''
     }
     async contactLoad() {
         let url = `${process.env.REACT_APP_API_URI}/contactInfo`;
         const response = await axios.get(url);
-        if((response.data).length > 0)
+        if ((response.data).length > 0)
             this.setState({ contact_info: response?.data[0] ?? '' });
         // console.log(response.data[0])
     }
@@ -32,30 +32,30 @@ export class Header extends Component {
         this.contactLoad();
         this.cmsLoad();
     }
-    
+
     componentWillUnmount() {
         window.removeEventListener('scroll', this.isSticky);
     }
-    
+
     isSticky = (e) => {
         const header = document.querySelector('header');
         const scrollTop = window.scrollY;
         scrollTop >= 250 ? header.classList.add('is-Sticky') : header.classList.remove('is-Sticky');
     };
-    
+
     render() {
-        const { contact_info,cms } = this.state;
-        
-     
-        
+        const { contact_info, cms } = this.state;
+
+
+
         return (
 
             <header id="masthead" className="header ttm-header-style-02 bg-theme-DarkColor">
                 {/* site-header-menu */}
-                
+
                 <div id="site-header-menu" className="site-header-menu">
                     <div className="site-header-menu-inner ttm-stickable-header">
-                        <div className="container">
+                        <div className="">
                             <div className="row">
                                 <div className="col-lg-12">
                                     {/* site-navigation */}
@@ -67,7 +67,7 @@ export class Header extends Component {
                                         {/* site-branding end */}
                                         <div className="border-box-block text-theme-WhiteColor site-navigation">
                                             <div className="top_bar d-flex align-items-center justify-content-between">
-                                                <div className="d-flex w-auto">
+                                                <div className="d-flex gap-4 align-items-center">
                                                     <div className="top_bar_contact_item">
                                                         <div className="top_bar_icon">
                                                             <i className="flaticon flaticon-phone-call"></i>
@@ -80,15 +80,31 @@ export class Header extends Component {
                                                         </div>
                                                         <span><a href="mailto:info@example.com">{contact_info.email}</a></span>
                                                     </div>
-                                                    <div className="top_bar_contact_item">
+                                                    <div className="top_bar_contact_item address">
                                                         <div className="top_bar_icon">
                                                             <i className="flaticon flaticon-placeholder"></i>
                                                         </div>
                                                         <span><a href="mailto:info@example.com">{contact_info.address}</a></span>
                                                     </div>
-                                                    
+                                                    <div className="top_bar_contact_item justify-content-end">
+                                                    <div className="d-flex socialIcon gap-2">
+                                                        <a href="https://www.facebook.com/">
+                                                            <i className="fa-brands fa-facebook-f"></i>
+                                                        </a>
+                                                        <a href="https://www.instagram.com/">
+                                                            <i className="fa-brands fa-instagram"></i>
+                                                        </a>
+                                                        {/* <a href="https://twitter.com/">
+                                                            <i className="fa-brands fa-twitter"></i>
+                                                            </a> */}
+                                                        <a href="https://www.linkedin.com/">
+                                                            <i className="fa-brands fa-linkedin-in"></i>
+                                                        </a>
+                                                    </div>
+                                                    </div>
+
                                                 </div>
-                                                <div className="media-block ms-auto">
+                                                {/* <div className="media-block ms-auto">
                                                     <ul className="social-icons">
                                                         <li>
                                                             {console.log(cms)}
@@ -112,25 +128,31 @@ export class Header extends Component {
                                                             </a>
                                                         </li>
                                                     </ul>
-                                                </div>
+                                                   
+                                                </div> */}
                                             </div>
-                                            <div className="d-flex align-items-center justify-content-between">
+                                            <div className="d-flex align-items-center justify-content-between pl-md-5 pr-md-4">
                                                 {/* menu */}
-                                                <Menu  />
+                                                <Menu />
+                                                
                                                 <div className="mobile-menu"><Mobile_menu /></div>
                                                 {/* menu end */}
-                                                
+                                                <div className="d-md-block d-none">
+                                                <GoogleTranslateWidget />
+
+                                                </div>
+
                                             </div>
                                         </div>
-                                        <div className="header_btn">
-                                            {/* <CountrySelector /> */}
-                                            <GoogleTranslateWidget />
-                                            {/* <a className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill
+                                        <div className="header_btn d-md-none pr-1">
+                                            {/* <CountrySelector />
+                                            <a className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill
                                             ttm-icon-btn-left ttm-btn-color-skincolor d-flex align-items-center">
                                                 <i className="far fa-user fa-sm"></i><a className="alert-heading" href={process.env.PUBLIC_URL + '/register'}>sign up </a>
                                                 <span className="ml-10 mr-10">/</span>
                                                 <i className="ti ti-lock fa-sm"></i><a className="alert-heading" href={process.env.PUBLIC_URL + '/login'}>login </a>
                                             </a> */}
+                                            <GoogleTranslateWidget />
                                         </div>
                                     </div>{/* site-navigation end */}
                                 </div>

@@ -58,11 +58,11 @@ export class Gallery extends Component {
                         <div className='d-flex'>
                             <Tabs>
                                 <TabList className='text-center'>
-                                    <Tab onClick={() => this.handleClick(0)} className={active == 0 ? 'btn btn-warning fw-bold' : 'btn btn-outline-warning fw-bold'}>All</Tab>
+                                    <Tab onClick={() => this.handleClick(0)} className={active == 0 ? 'btn btn-primary withBorder fw-bold' : 'btn btn-primary gradient-border fw-bold withBorder'}>All</Tab>
                                     {
                                         job_categories.map((item) => {
                                             return (
-                                                <Tab onClick={() => this.handleClick(item.id)} className={active == item.id ? 'btn btn-warning fw-bold' : 'btn btn-outline-warning fw-bold'} key={item.id}>{item.title}</Tab>
+                                                <Tab onClick={() => this.handleClick(item.id)} className={active == item.id ? 'btn btn-primary fw-bold withBorder' : 'btn btn-primary gradient-border fw-bold withBorder'} key={item.id}>{item.title}</Tab>
                                             )
                                         })
                                     }

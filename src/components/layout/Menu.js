@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import axios from 'axios';
 import stye from '../../assets/css/custom.css'
 import { useLocation } from "react-router-dom";
+import GoogleTranslateWidget from './GoogleTranslateWidget1';
 
 const Menu = () => {
     const location = useLocation();
@@ -52,6 +53,7 @@ const Menu = () => {
                     </li>
                 </ul>
             </nav>
+            {/* <GoogleTranslateWidget /> */}
         </Router>
     )
 

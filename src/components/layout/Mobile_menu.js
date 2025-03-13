@@ -6,6 +6,7 @@ import {
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import axios from "axios";
+import GoogleTranslateWidget from './GoogleTranslateWidget1';
 
 class Mobile_menu extends Component {
   state = {
@@ -87,6 +88,7 @@ class Mobile_menu extends Component {
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBNavbar>
+        {/* <GoogleTranslateWidget /> */}
       </Router>
     );
   }
