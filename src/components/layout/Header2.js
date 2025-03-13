@@ -66,7 +66,7 @@ export class Header extends Component {
                                         </div>
                                         {/* site-branding end */}
                                         <div className="border-box-block text-theme-WhiteColor site-navigation">
-                                            {/* <div className="top_bar d-flex align-items-center justify-content-between">
+                                            <div className="top_bar d-flex align-items-center justify-content-between">
                                                 <div className="d-flex w-auto">
                                                     <div className="top_bar_contact_item">
                                                         <div className="top_bar_icon">
@@ -79,6 +79,12 @@ export class Header extends Component {
                                                             <i className="flaticon flaticon-email"></i>
                                                         </div>
                                                         <span><a href="mailto:info@example.com">{contact_info.email}</a></span>
+                                                    </div>
+                                                    <div className="top_bar_contact_item">
+                                                        <div className="top_bar_icon">
+                                                            <i className="flaticon flaticon-placeholder"></i>
+                                                        </div>
+                                                        <span><a href="mailto:info@example.com">{contact_info.address}</a></span>
                                                     </div>
                                                     
                                                 </div>
@@ -107,7 +113,7 @@ export class Header extends Component {
                                                         </li>
                                                     </ul>
                                                 </div>
-                                            </div> */}
+                                            </div>
                                             <div className="d-flex align-items-center justify-content-between">
                                                 {/* menu */}
                                                 <Menu  />

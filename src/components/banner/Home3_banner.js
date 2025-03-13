@@ -76,9 +76,11 @@ export class Banner extends Component {
                                         <div className="col-lg-6 col-md-8">
                                             <div className="slide__content--headings ttm-textcolor-white">
                                                 <h2 className="animated animate__fadeInDown text-center">{v.title}</h2>
-                                                <div className="animated animate__fadeInUp" data-delay="1.4">
-                                                    {/* <a className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-fill ttm-btn-color-skincolor"
-                                                        href={process.env.PUBLIC_URL + '/contact_01'}>Contact us</a> */}
+                                                <div className="animated animate__fadeInUp text-center" data-delay="1.4">
+                                                    <a style={{background:"#005780"}} className="text-white btn me-2"
+                                                        href={process.env.PUBLIC_URL + '/contact_01'}>Contact us</a>
+                                                    <a style={{color:'white!important'}} className="btn btn-outline-light"
+                                                        href={process.env.PUBLIC_URL + '/contact_01'}>Learn More</a>
                                                 </div>
                                             </div>
                                         </div>
