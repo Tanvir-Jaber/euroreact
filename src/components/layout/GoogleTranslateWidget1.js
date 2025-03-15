@@ -65,7 +65,7 @@ const GoogleTranslateWidget1 = () => {
     setSelectedLang(langCode);
     setIsOpen(false);
     console.log();
-    
+
   };
 
   return (
@@ -83,8 +83,7 @@ const GoogleTranslateWidget1 = () => {
                   style={{ width: "20px", height: "15px", marginRight: "8px" }}
                 />
                 <span>
-                {selectedLanguage.name}
-
+                  {selectedLanguage.name}
                 </span>
               </>
             )}
@@ -104,8 +103,7 @@ const GoogleTranslateWidget1 = () => {
                     style={{ width: "20px", height: "15px", marginRight: "8px" }}
                   />
                   <span>
-
-                  {lang.name}
+                    {lang.name}
                   </span>
                 </div>
               ))}

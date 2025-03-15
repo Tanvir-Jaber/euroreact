@@ -25,7 +25,7 @@ export class Header extends Component {
         let url = `${process.env.REACT_APP_API_URI}/cms`;
         const response = await axios.get(url);
         this.setState({ cms: response?.data?.data ?? '' });
-        // console.log(this.state)
+        console.log(this.state)
     }
     componentDidMount() {
         window.addEventListener('scroll', this.isSticky);
@@ -88,16 +88,16 @@ export class Header extends Component {
                                                     </div>
                                                     <div className="top_bar_contact_item justify-content-end">
                                                     <div className="d-flex socialIcon gap-2">
-                                                        <a href="https://www.facebook.com/">
+                                                        <a href={cms.footer_facebook_link}>
                                                             <i className="fa-brands fa-facebook-f"></i>
                                                         </a>
-                                                        <a href="https://www.instagram.com/">
+                                                        <a href={cms.footer_instagram_link}>
                                                             <i className="fa-brands fa-instagram"></i>
                                                         </a>
                                                         {/* <a href="https://twitter.com/">
                                                             <i className="fa-brands fa-twitter"></i>
                                                             </a> */}
-                                                        <a href="https://www.linkedin.com/">
+                                                        <a href={cms.footer_youtube_link}>
                                                             <i className="fa-brands fa-linkedin-in"></i>
                                                         </a>
                                                     </div>

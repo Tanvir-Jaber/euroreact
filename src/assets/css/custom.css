@@ -959,8 +959,8 @@ nav.main-menu {
   max-width: 320px;
 }
 .dropdown-option span,
-.dropdown-option sapn, .selected-option span{
-  display: none;
+.dropdown-option span, .selected-option span{
+  /* display: none; */
 }
 nav.main-menu li ul.mega-submenu {
   background: #192635;
@@ -985,14 +985,14 @@ nav.main-menu ul.menu li ul.mega-submenu li a {
     font-weight: 500;
     cursor: pointer;
     color: #000;
-    /* width: 170px; */
-    width: 60px;
+    width: 170px;
+    /* width: 60px; */
   }
   .dropdown-option img{
     margin: 0;
   }
   .dropdown-option{
-    text-align: center;
+    /* text-align: center; */
   }
   .ttm-header-style-02 #site-header-menu .site-navigation ul.menu > li > a {
     padding: 28px 20px 28px 20px;

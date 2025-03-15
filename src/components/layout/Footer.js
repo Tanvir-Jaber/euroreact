@@ -6,7 +6,8 @@ import style from "../../assets/css/custom.css";
 export class Footer extends Component {
   state = {
     service_menu: [],
-    footer_content: ''
+    footer_content: '',
+    cms: ''
   }
   async servicemenusLoad() {
     let url = `${process.env.REACT_APP_API_URI}/serviceSection`;
@@ -18,13 +19,20 @@ export class Footer extends Component {
     const response = await axios.get(url);
     this.setState({ footer_content: response?.data ?? '' });
   }
+  async cmsLoad() {
+      let url = `${process.env.REACT_APP_API_URI}/cms`;
+      const response = await axios.get(url);
+      this.setState({ cms: response?.data?.data ?? '' });
+      console.log(this.state)
+  }
   componentDidMount() {
     this.servicemenusLoad();
     this.footerContentLoad();
+    this.cmsLoad();
   }
 
   render() {
-    const { service_menu,footer_content } = this.state;
+    const { service_menu,footer_content,cms } = this.state;
     return (
       <footer className="footer widget-footer bg-theme-DarkColor text-theme-WhiteColor clearfix">
         <div className="second-footer">
@@ -52,16 +60,16 @@ export class Footer extends Component {
                     Request A Free Quotes
                   </a> */}
                   <div className="d-flex socialIcon gap-2">
-                    <a href="https://www.facebook.com/">
+                    <a href={cms.footer_facebook_link}>
                     <i className="fa-brands fa-facebook-f"></i>
                     </a>
-                    <a href="https://www.instagram.com/">
+                    <a href={cms.footer_instagram_link}>
                     <i className="fa-brands fa-instagram"></i>
                     </a>
                     {/* <a href="https://twitter.com/">
                       <i className="fa-brands fa-twitter"></i>
                     </a> */}
-                    <a href="https://www.linkedin.com/">
+                    <a href={cms.footer_youtube_link}>
                     <i className="fa-brands fa-linkedin-in"></i>
                     </a>
                   </div>
